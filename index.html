@@ -8,12 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- مكتبة QR Code -->
+    <!-- مكتبة QR Code و html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <!-- مكتبة تحويل HTML إلى صورة -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
+        /* إعدادات الشاشة العادية (التصميم التفاعلي) */
         .flip-card {
             background-color: transparent;
             width: 100%;
@@ -73,16 +73,63 @@
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
-        
-        /* إخفاء أزرار التحميل عند التقاط الصورة */
-        .hide-on-download {
-            display: flex;
+
+        /* =========================================
+           إعدادات الطباعة (تظهر فقط عند الطباعة)
+           ========================================= */
+        @media print {
+            body { 
+                background: white !important; /* خلفية بيضاء للورق */
+                padding: 0; 
+                margin: 0; 
+            }
+            
+            /* إخفاء الأزرار والنصوص الإرشادية عند الطباعة */
+            .print-hidden { 
+                display: none !important; 
+            }
+            
+            /* إلغاء الـ 3D لعرض الوجهين معاً */
+            .flip-card {
+                perspective: none;
+                width: 100%;
+                height: auto;
+            }
+            
+            .flip-card-inner {
+                transform: none !important;
+                box-shadow: none;
+                display: flex;
+                flex-direction: row; /* وضع الوجهين جنباً إلى جنب */
+                justify-content: center;
+                gap: 20px;
+                padding-top: 50px;
+            }
+            
+            /* تحديد مقاسات البطاقة القياسية للطباعة (8.5 سم × 5.5 سم) */
+            .flip-card-front, .flip-card-back {
+                position: relative;
+                width: 85mm !important; 
+                height: 55mm !important;
+                transform: none !important; /* إلغاء دوران الوجه الخلفي */
+                backface-visibility: visible;
+                border: 1px dashed #9ca3af; /* خط متقطع لتسهيل القص بالمقص */
+                border-radius: 0; /* إلغاء الزوايا الدائرية لتسهيل القص */
+                page-break-inside: avoid;
+            }
+
+            /* إجبار الطابعة على طباعة الألوان والخلفيات */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
 <body class="bg-gray-200 min-h-screen flex flex-col items-center justify-center p-4 font-sans text-gray-800">
 
-    <div class="mb-6 text-center hide-on-download flex-col items-center">
+    <!-- العنوان (يختفي عند الطباعة) -->
+    <div class="mb-6 text-center print-hidden flex-col items-center">
         <h1 class="text-2xl font-bold text-gray-700 mb-2">Carte de Visite Digitale</h1>
         <p class="text-sm text-gray-500 click-hint"><i class="fa-solid fa-hand-pointer mr-2"></i>Cliquez sur la carte pour la retourner</p>
     </div>
@@ -100,19 +147,19 @@
                 
                 <div class="bg-white p-5 text-left h-3/5 flex flex-col justify-center space-y-3">
                     <div class="flex items-center text-sm text-gray-700">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3 shrink-0">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <span>(213) 0563 54 50 16</span>
                     </div>
                     <div class="flex items-center text-sm text-gray-700">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3 shrink-0">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <span>hibatallahbelaggoun@gmail.com</span>
+                        <span class="truncate">hibatallahbelaggoun@gmail.com</span>
                     </div>
                     <div class="flex items-center text-sm text-gray-700">
-                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center mr-3 shrink-0">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <span>Hai Mohamed Boudiaf, Es Sénia, Oran</span>
@@ -125,11 +172,11 @@
                 <div class="absolute top-0 left-0 w-full h-2 bg-teal-600"></div>
                 
                 <h3 class="text-lg font-bold text-teal-800 mb-1">Mon CV Complet</h3>
-                <p class="text-xs text-gray-600 mb-4">Scannez ce code pour visualiser mon parcours</p>
+                <p class="text-xs text-gray-600 mb-3">Scannez ce code pour visualiser mon parcours</p>
                 
                 <div class="bg-white p-2 rounded-lg shadow-sm border border-gray-200" id="qrcode"></div>
                 
-                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                <div class="mt-3 flex flex-wrap justify-center gap-1.5">
                     <span class="bg-teal-100 text-teal-800 text-[10px] px-2 py-1 rounded-full font-semibold">Logiciel CHIFA</span>
                     <span class="bg-teal-100 text-teal-800 text-[10px] px-2 py-1 rounded-full font-semibold">Gestion de Stock</span>
                     <span class="bg-teal-100 text-teal-800 text-[10px] px-2 py-1 rounded-full font-semibold">Conseil Client</span>
@@ -139,13 +186,19 @@
         </div>
     </div>
 
-    <!-- أزرار التحميل كصورة -->
-    <div class="mt-8 flex gap-4 hide-on-download">
-        <button onclick="downloadImage('front', event)" class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm transition shadow">
-            <i class="fa-solid fa-download mr-2"></i>Télécharger Recto (الأمام)
+    <!-- أزرار التحكم (تختفي عند الطباعة) -->
+    <div class="mt-8 flex flex-wrap justify-center gap-4 print-hidden">
+        <!-- زر التحميل الوجه الأمامي -->
+        <button onclick="downloadImage('front', event)" class="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm transition shadow flex items-center">
+            <i class="fa-solid fa-image mr-2"></i> Image Recto
         </button>
-        <button onclick="downloadImage('back', event)" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm transition shadow">
-            <i class="fa-solid fa-download mr-2"></i>Télécharger Verso (الخلف)
+        <!-- زر التحميل الوجه الخلفي -->
+        <button onclick="downloadImage('back', event)" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm transition shadow flex items-center">
+            <i class="fa-solid fa-image mr-2"></i> Image Verso
+        </button>
+        <!-- زر الطباعة الجديد -->
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm transition shadow font-bold flex items-center">
+            <i class="fa-solid fa-print mr-2"></i> Imprimer (طباعة)
         </button>
     </div>
 
@@ -168,23 +221,20 @@
 
         // دالة تحميل البطاقة كصورة
         function downloadImage(side, event) {
-            // منع قلب البطاقة عند النقر على الزر
             event.stopPropagation();
             
             const card = document.getElementById('myCard');
             const elementToCapture = side === 'front' ? document.getElementById('cardFront') : document.getElementById('cardBack');
             
-            // التأكد من أن الوجه المطلوب مرئي قبل التقاط الصورة
             if(side === 'front' && card.classList.contains('flipped')) {
                 card.classList.remove('flipped');
             } else if (side === 'back' && !card.classList.contains('flipped')) {
                 card.classList.add('flipped');
             }
 
-            // ننتظر قليلاً حتى تكتمل حركة الدوران (Animation) ثم نلتقط الصورة
             setTimeout(() => {
                 html2canvas(elementToCapture, {
-                    scale: 3, // دقة عالية للصورة
+                    scale: 3, 
                     backgroundColor: side === 'front' ? "#ffffff" : "#f0fdfa",
                     useCORS: true
                 }).then(canvas => {
@@ -193,7 +243,7 @@
                     link.href = canvas.toDataURL('image/png');
                     link.click();
                 });
-            }, 600); // الانتظار 0.6 ثانية
+            }, 600); 
         }
     </script>
 </body>
