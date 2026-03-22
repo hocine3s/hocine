@@ -65,8 +65,8 @@
             موقع أنيق لمشروعك الخاص في <span class="text-brand-rose">الكروشيه</span>
           </h1>
           <p class="mb-8 max-w-2xl text-lg leading-8 text-brand-mocha/90">
-            اعرضي لزبائنك أقسام الأميغورومي، الإكسسوارات، الملابس، وديكور المنزل. عند دخول أي قسم سيجد الزبون ما هو
-            متوفر الآن، وما يمكن تنفيذه حسب الطلب، مع نموذج طلب خاص لإرسال الاسم واللقب والهاتف وصورة التصميم المطلوب.
+            واجهة الزبون تعرض الأقسام والمنتجات والطلبات الخاصة، بينما واجهة صاحب المشروع تتيح له إدخال مفتاح Firebase،
+            استقبال الطلبات، وإضافة صور وفئات وشرح وسعر لكل منتج بسهولة.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#categories" class="rounded-full bg-brand-rose px-7 py-3 text-sm font-bold text-white shadow-soft hover:bg-brand-mocha">استعراض الأقسام</a>
@@ -78,12 +78,12 @@
               <p class="text-sm text-brand-mocha">أقسام رئيسية واضحة</p>
             </div>
             <div class="rounded-3xl bg-white p-5 shadow-soft">
-              <p class="text-3xl font-extrabold text-brand-olive">12+</p>
-              <p class="text-sm text-brand-mocha">منتجات جاهزة للعرض</p>
+              <p class="text-3xl font-extrabold text-brand-olive">واجهة</p>
+              <p class="text-sm text-brand-mocha">خاصة بصاحب المشروع</p>
             </div>
             <div class="rounded-3xl bg-white p-5 shadow-soft">
               <p class="text-3xl font-extrabold text-brand-mocha">100%</p>
-              <p class="text-sm text-brand-mocha">إمكانية تخصيص الطلبات</p>
+              <p class="text-sm text-brand-mocha">مرونة في تخصيص الطلبات</p>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
           </article>
           <article class="rounded-[2rem] bg-brand-mocha p-4 text-white shadow-soft">
             <img class="mb-4 h-72 w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80" alt="أدوات كروشيه وخيوط" />
-            <h2 class="text-xl font-bold">نموذج طلب خاص للزبائن الذين يريدون تصميماً مخصصاً</h2>
+            <h2 class="text-xl font-bold">لوحة تحكم مخفية تُفتح لصاحب المشروع بالنقر المزدوج على الشعار الصغير</h2>
           </article>
         </div>
       </section>
@@ -104,36 +104,15 @@
     <main>
       <section id="categories" class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div class="mb-10 text-center">
-          <p class="mb-3 text-sm font-bold text-brand-rose">البداية كما طلبت</p>
+          <p class="mb-3 text-sm font-bold text-brand-rose">واجهة الزبون</p>
           <h2 class="mb-4 text-3xl font-extrabold md:text-4xl">الأقسام الرئيسية في واجهة الموقع</h2>
           <p class="mx-auto max-w-3xl text-brand-mocha/90">
-            يبدأ الموقع بأربع فئات أساسية: أميغورومي، إكسسوارات، ملابس، ديكور للمنزل. يمكن للزبون الضغط على أي قسم
-            لرؤية المتوفر حالياً وما يمكن تصنيعه عند الطلب.
+            يبدأ الموقع بأربع فئات أساسية. يمكن للزبون الضغط على أي قسم لرؤية المنتجات، بينما يمكن لصاحب المشروع إضافة
+            فئات جديدة ومنتجات جديدة من الواجهة الخاصة به.
           </p>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft ring-2 ring-brand-rose" data-category="amigurumi">
-            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">أميغورومي</span>
-            <h3 class="mb-3 text-2xl font-extrabold">دمى لطيفة وهدايا شخصية</h3>
-            <p class="text-sm leading-7 text-brand-mocha/80">دببة، أرانب، شخصيات أطفال، مجسمات مخصصة للأسماء والمناسبات.</p>
-          </button>
-          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="accessories">
-            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">إكسسوارات</span>
-            <h3 class="mb-3 text-2xl font-extrabold">لمسات يومية أنيقة</h3>
-            <p class="text-sm leading-7 text-brand-mocha/80">حقائب، محافظ، ربطات شعر، أغطية هواتف، هدايا بسيطة وجميلة.</p>
-          </button>
-          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="clothes">
-            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">ملابس</span>
-            <h3 class="mb-3 text-2xl font-extrabold">قطع مريحة حسب المقاس</h3>
-            <p class="text-sm leading-7 text-brand-mocha/80">جاكيتات، أطقم أطفال، شالات، قبعات وقطع موسمية قابلة للتخصيص.</p>
-          </button>
-          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="decor">
-            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">ديكور المنزل</span>
-            <h3 class="mb-3 text-2xl font-extrabold">دفء وأناقة في كل زاوية</h3>
-            <p class="text-sm leading-7 text-brand-mocha/80">سلال، مفارش، أغطية وسائد، تعليقات حائط، وسلال تخزين جميلة.</p>
-          </button>
-        </div>
+        <div id="category-buttons" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
       </section>
 
       <section id="products" class="bg-white py-16">
@@ -142,28 +121,25 @@
             <div>
               <p class="mb-2 text-sm font-bold text-brand-rose">المتوفر الآن وما يمكن صنعه</p>
               <h2 id="category-title" class="text-3xl font-extrabold">قسم الأميغورومي</h2>
-              <p id="category-description" class="mt-3 max-w-3xl text-brand-mocha/80">
-                هذا القسم يعرض منتجات جاهزة للتسليم، إلى جانب تصاميم يمكن تنفيذها حسب الألوان والحجم والشخصية المطلوبة.
-              </p>
+              <p id="category-description" class="mt-3 max-w-3xl text-brand-mocha/80"></p>
             </div>
             <a href="#custom" class="w-fit rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-rose">لم تجد ما تريد؟ اطلب تصميماً خاصاً</a>
           </div>
 
           <div class="grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
             <div>
-              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">المتوفر حالياً</h3>
+              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">المنتجات المعروضة</h3>
               <div id="available-list" class="grid gap-5 md:grid-cols-2"></div>
             </div>
             <aside class="rounded-[2rem] bg-brand-sand p-8 shadow-soft">
-              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">يمكننا أن نصنع لك أيضاً</h3>
+              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">مميزات الطلب حسب الطلب</h3>
               <ul id="custom-list" class="space-y-4 text-sm leading-7 text-brand-mocha"></ul>
               <div class="mt-8 rounded-[1.5rem] bg-white p-5">
-                <p class="mb-2 text-sm font-bold text-brand-rose">ماذا نوفر في الطلبات الخاصة؟</p>
-                <ul class="space-y-2 text-sm text-brand-mocha/85">
-                  <li>• اختيار الألوان والخيط المناسب.</li>
-                  <li>• تنفيذ الحجم أو المقاس الذي يريده الزبون.</li>
-                  <li>• إضافة اسم أو تفاصيل خاصة حسب الطلب.</li>
-                </ul>
+                <p class="mb-2 text-sm font-bold text-brand-rose">الدخول السري لصاحب المشروع</p>
+                <p class="text-sm leading-7 text-brand-mocha/85">
+                  يوجد شعار صغير فيه يد وإبرة كروشيه وخيط في واجهة الزبون. عند الضغط عليه مرتين، تظهر نافذة دخول
+                  صاحب المشروع، والرقم السري الحالي هو <span class="font-extrabold">11020</span>.
+                </p>
               </div>
             </aside>
           </div>
@@ -176,8 +152,8 @@
             <p class="mb-3 text-sm font-bold text-brand-sand">جهة خاصة للطلب</p>
             <h2 class="mb-5 text-3xl font-extrabold">أرسل طلبك حتى لو لم تجد ما تريد في الموقع</h2>
             <p class="mb-8 leading-8 text-white/85">
-              هذا النموذج مخصص للزبون الذي يريد تصميماً غير موجود حالياً في الأقسام. يكتب الاسم واللقب ورقم الهاتف، ثم يرفع صورة
-              القطعة التي يريد تنفيذها حتى يتم التواصل معه وتأكيد التفاصيل.
+              يكتب الزبون الاسم واللقب ورقم الهاتف، ثم يرفع صورة القطعة المطلوبة. الطلب يُحفظ محلياً ويظهر أيضاً داخل
+              واجهة صاحب المشروع في قسم استقبال الطلبات.
             </p>
             <div class="space-y-4 rounded-[1.5rem] bg-white/10 p-6">
               <div>
@@ -191,8 +167,8 @@
               </div>
             </div>
             <div class="mt-6 rounded-[1.5rem] bg-white/10 p-5 text-sm leading-7 text-white/85">
-              <p class="font-bold text-white">الآن النموذج عملي:</p>
-              <p>بعد الإرسال سيُفتح واتساب برسالة جاهزة بكل التفاصيل، مع حفظ نسخة احتياطية من الطلب داخل المتصفح حتى لا تضيع البيانات قبل الإرسال.</p>
+              <p class="font-bold text-white">ملاحظة مهمة:</p>
+              <p>واجهة صاحب المشروع تعرض الطلبات المستلمة مباشرة من نفس المتصفح، لتسهيل المراجعة قبل التواصل مع الزبائن.</p>
             </div>
           </div>
 
@@ -215,13 +191,7 @@
               </label>
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-brand-mocha">القسم الأقرب للطلب</span>
-                <select id="category-select" name="category" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose">
-                  <option>أميغورومي</option>
-                  <option>إكسسوارات</option>
-                  <option>ملابس</option>
-                  <option>ديكور المنزل</option>
-                  <option>طلب مختلف</option>
-                </select>
+                <select id="category-select" name="category" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></select>
               </label>
             </div>
 
@@ -236,11 +206,6 @@
               <span id="file-name" class="mt-3 block text-sm text-brand-mocha/75">لم يتم اختيار أي صورة بعد.</span>
             </label>
 
-            <div class="mt-6 rounded-[1.5rem] bg-brand-cream p-4 text-sm text-brand-mocha/85">
-              <p class="font-bold text-brand-mocha">تنبيه:</p>
-              <p>واتساب لا يرفق الصورة تلقائياً من المتصفح، لذلك سيُفتح لك الطلب كنص جاهز مع اسم الصورة المختارة حتى تتمكن من إرسالها مباشرة بعد فتح المحادثة.</p>
-            </div>
-
             <div id="form-status" class="mt-6 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -254,13 +219,145 @@
           </form>
         </div>
       </section>
+
+      <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <div class="rounded-[2rem] bg-white p-6 shadow-soft">
+          <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-bold text-brand-rose">شعار واجهة الزبون</p>
+              <h2 class="text-2xl font-extrabold text-brand-mocha">اضغط مرتين لفتح واجهة صاحب المشروع</h2>
+            </div>
+            <button id="owner-logo-trigger" type="button" class="flex items-center gap-3 rounded-full border border-brand-sand bg-brand-cream px-5 py-3 transition hover:border-brand-rose" aria-label="فتح واجهة صاحب المشروع بالنقر المزدوج">
+              <span class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-soft">
+                <svg viewBox="0 0 64 64" class="h-10 w-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 36C19 29.3726 24.3726 24 31 24H33C39.6274 24 45 29.3726 45 36V41C45 45.4183 41.4183 49 37 49H31C24.3726 49 19 43.6274 19 37V36Z" fill="#f2e6dc" stroke="#6f4e37" stroke-width="2.5"/>
+                  <path d="M31 24V18C31 14.6863 33.6863 12 37 12C40.3137 12 43 14.6863 43 18V24" stroke="#d9968a" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M47 14C51.4183 17.3333 51.4183 22.6667 47 30" stroke="#728c69" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="47" cy="14" r="3" fill="#728c69"/>
+                  <path d="M24 41C25.5 44 28.5 46 32 46C35.5 46 38.5 44 40 41" stroke="#d9968a" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="text-right">
+                <span class="block text-sm font-extrabold text-brand-mocha">يد + إبرة كروشيه + خيط</span>
+                <span class="block text-xs text-brand-mocha/70">نقرتان متتاليتان تفتحان لوحة صاحب المشروع</span>
+              </span>
+            </button>
+          </div>
+          <p class="text-sm leading-7 text-brand-mocha/80">
+            الشعار مخصص لإبقاء واجهة الزبون نظيفة وبسيطة. إذا نقر عليه صاحب المشروع نقرتين متتاليتين، سيفتح نموذج الدخول
+            السري إلى لوحة التحكم الخاصة به.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <section id="owner-panel" class="fixed inset-0 z-50 hidden bg-brand-dark/70 px-4 py-8 backdrop-blur-sm">
+      <div class="mx-auto max-h-full max-w-6xl overflow-y-auto rounded-[2rem] bg-brand-cream p-6 shadow-soft lg:p-8">
+        <div class="mb-6 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p class="text-sm font-bold text-brand-rose">واجهة صاحب المشروع</p>
+            <h2 class="text-3xl font-extrabold text-brand-mocha">إدارة المشروع والطلبات والمنتجات</h2>
+            <p class="mt-2 text-sm text-brand-mocha/80">يمكنك الدخول عبر الرقم السري 11020، ثم إدارة مفتاح Firebase والطلبات والفئات والمنتجات من هنا.</p>
+          </div>
+          <button id="close-owner-panel" type="button" class="rounded-full border border-brand-mocha px-5 py-2 font-bold text-brand-mocha transition hover:bg-white">إغلاق</button>
+        </div>
+
+        <div id="owner-login-view" class="grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="rounded-[2rem] bg-brand-mocha p-8 text-white">
+            <h3 class="text-2xl font-extrabold">دخول صاحب المشروع</h3>
+            <p class="mt-4 text-sm leading-7 text-white/85">للوصول إلى لوحة التحكم، أدخل الرقم السري. تم ضبط الرقم المطلوب حسب طلبك وهو 11020.</p>
+          </div>
+          <form id="owner-login-form" class="rounded-[2rem] bg-white p-8 shadow-soft">
+            <label class="block">
+              <span class="mb-2 block text-sm font-bold text-brand-mocha">الرقم السري</span>
+              <input id="owner-pin-input" type="password" inputmode="numeric" placeholder="أدخل الرقم السري" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+            </label>
+            <div id="owner-login-status" class="mt-4 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
+            <button type="submit" class="mt-6 w-full rounded-full bg-brand-rose px-6 py-4 text-base font-extrabold text-white transition hover:bg-brand-mocha">دخول إلى الواجهة</button>
+          </form>
+        </div>
+
+        <div id="owner-dashboard" class="hidden space-y-8">
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="rounded-[2rem] bg-white p-6 shadow-soft">
+              <p class="text-sm font-bold text-brand-rose">إعدادات الربط</p>
+              <h3 class="mt-2 text-xl font-extrabold text-brand-mocha">مكان وضع مفتاح Firebase</h3>
+              <label class="mt-4 block">
+                <span class="mb-2 block text-sm font-bold text-brand-mocha">Firebase API Key أو النص الكامل للإعداد</span>
+                <textarea id="firebase-key-input" rows="6" placeholder="ضع هنا مفتاح Firebase أو إعدادات المشروع كاملة" class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></textarea>
+              </label>
+              <button id="save-firebase-key" type="button" class="mt-4 rounded-full bg-brand-mocha px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-rose">حفظ المفتاح</button>
+              <div id="firebase-status" class="mt-4 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
+            </article>
+
+            <article class="rounded-[2rem] bg-white p-6 shadow-soft lg:col-span-2">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p class="text-sm font-bold text-brand-rose">استقبال الطلبات</p>
+                  <h3 class="mt-2 text-xl font-extrabold text-brand-mocha">طلبات الزبائن المستلمة</h3>
+                </div>
+                <button id="clear-requests" type="button" class="rounded-full border border-brand-mocha px-5 py-2 text-sm font-bold text-brand-mocha transition hover:bg-brand-cream">مسح كل الطلبات</button>
+              </div>
+              <div id="requests-list" class="mt-6 space-y-4"></div>
+            </article>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
+            <form id="category-form" class="rounded-[2rem] bg-white p-6 shadow-soft">
+              <p class="text-sm font-bold text-brand-rose">إضافة فئة</p>
+              <h3 class="mt-2 text-xl font-extrabold text-brand-mocha">أضف فئة جديدة للمتجر</h3>
+              <div class="mt-4 space-y-4">
+                <label class="block">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">اسم الفئة</span>
+                  <input name="name" type="text" placeholder="مثال: هدايا المناسبات" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">وصف الفئة</span>
+                  <textarea name="description" rows="4" placeholder="اشرح بإيجاز ما تحتويه هذه الفئة" class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required></textarea>
+                </label>
+              </div>
+              <button type="submit" class="mt-5 rounded-full bg-brand-rose px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-mocha">إضافة الفئة</button>
+              <div id="category-status" class="mt-4 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
+            </form>
+
+            <form id="product-form" class="rounded-[2rem] bg-white p-6 shadow-soft">
+              <p class="text-sm font-bold text-brand-rose">إضافة منتج</p>
+              <h3 class="mt-2 text-xl font-extrabold text-brand-mocha">صورة + فئة + شرح + سعر</h3>
+              <div class="mt-4 grid gap-4 md:grid-cols-2">
+                <label class="block md:col-span-2">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">الفئة</span>
+                  <select id="owner-category-select" name="category" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></select>
+                </label>
+                <label class="block">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">اسم المنتج</span>
+                  <input name="name" type="text" placeholder="مثال: حقيبة كروشيه فاخرة" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">السعر</span>
+                  <input name="price" type="text" placeholder="مثال: 2800 دج" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required />
+                </label>
+                <label class="block md:col-span-2">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">شرح المنتج</span>
+                  <textarea name="details" rows="4" placeholder="اكتب وصفاً واضحاً للخامات، المقاس، والألوان" class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required></textarea>
+                </label>
+                <label class="block md:col-span-2">
+                  <span class="mb-2 block text-sm font-bold text-brand-mocha">رابط صورة المنتج</span>
+                  <input name="image" type="url" placeholder="https://example.com/product.jpg" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" required />
+                </label>
+              </div>
+              <button type="submit" class="mt-5 rounded-full bg-brand-mocha px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-rose">إضافة المنتج</button>
+              <div id="product-status" class="mt-4 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer id="contact" class="bg-brand-dark py-10 text-white">
       <div class="mx-auto flex max-w-7xl flex-col gap-5 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div>
           <h2 class="text-2xl font-extrabold">دفء الغرز</h2>
-          <p class="mt-2 text-sm text-white/75">موقع كروشيه عربي يعرض المتوفر وما يمكن صنعه، مع استقبال الطلبات الخاصة بسهولة.</p>
+          <p class="mt-2 text-sm text-white/75">موقع كروشيه عربي يعرض المنتجات والطلبات الخاصة، مع لوحة لصاحب المشروع لإدارة البيانات محلياً.</p>
         </div>
         <div class="flex flex-wrap gap-3 text-sm text-white/80">
           <a href="https://wa.me/213550000000" target="_blank" rel="noreferrer" class="rounded-full bg-white/10 px-4 py-2 transition hover:bg-white/20">واتساب: 0550 000 000</a>
@@ -272,52 +369,53 @@
 
     <script>
       const STORE_PHONE = '213550000000';
+      const OWNER_PIN = '11020';
       const DRAFT_KEY = 'custom-order-draft';
+      const OWNER_SESSION_KEY = 'owner-session';
+      const FIREBASE_KEY_STORAGE = 'firebase-key-storage';
+      const REQUESTS_KEY = 'customer-requests';
+      const CATEGORIES_KEY = 'crochet-categories';
 
-      const categories = {
+      const defaultCategories = {
         amigurumi: {
           title: 'قسم الأميغورومي',
+          shortLabel: 'أميغورومي',
           description: 'دمى ومجسمات يدوية مناسبة للهدايا، أعياد الميلاد، وغرف الأطفال، مع إمكانية تنفيذ شخصيات خاصة.',
+          custom: ['شخصيات كرتونية حسب الصورة المرجعية.', 'دمى بأحجام أكبر أو أصغر حسب الطلب.', 'تنفيذ ألوان خاصة للمناسبات أو الهدايا.'],
           available: [
-            { name: 'أرنب وردي صغير', details: 'متوفر الآن - 3 قطع - ألوان هادئة', price: '1800 دج' },
-            { name: 'دبدوب باسم الطفل', details: 'متوفر الآن - يمكن إضافة الاسم', price: '2200 دج' },
-            { name: 'مجموعة فواكه لطيفة', details: 'متوفر الآن - 5 أشكال مختلفة', price: '1600 دج' },
-            { name: 'عروسة صغيرة', details: 'متوفر الآن - هدية مثالية', price: '2500 دج' }
-          ],
-          custom: ['شخصيات كرتونية حسب الصورة المرجعية.', 'دمى بأحجام أكبر أو أصغر حسب الطلب.', 'تنفيذ ألوان خاصة للمناسبات أو الهدايا.']
+            { name: 'أرنب وردي صغير', details: 'متوفر الآن - 3 قطع - ألوان هادئة', price: '1800 دج', image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80' },
+            { name: 'دبدوب باسم الطفل', details: 'متوفر الآن - يمكن إضافة الاسم', price: '2200 دج', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80' }
+          ]
         },
         accessories: {
           title: 'قسم الإكسسوارات',
+          shortLabel: 'إكسسوارات',
           description: 'قطع عملية وأنيقة للاستعمال اليومي أو كهدايا خفيفة، مع إمكانية تغيير اللون والمقاس ونوع الإغلاق.',
+          custom: ['حقائب بأحجام خاصة أو بأحزمة طويلة.', 'إكسسوارات بألوان الهوية الخاصة بك.', 'هدايا مناسبات مع تغليف بسيط وراقي.'],
           available: [
-            { name: 'حقيبة يد صغيرة', details: 'متوفرة الآن - لون بيج وكحلي', price: '2800 دج' },
-            { name: 'حافظة نقود', details: 'متوفرة الآن - 4 ألوان', price: '1200 دج' },
-            { name: 'ربطات شعر كروشيه', details: 'متوفرة الآن - طقم من 3 قطع', price: '900 دج' },
-            { name: 'غطاء هاتف', details: 'متوفر الآن - مقاسات محددة', price: '1500 دج' }
-          ],
-          custom: ['حقائب بأحجام خاصة أو بأحزمة طويلة.', 'إكسسوارات بألوان الهوية الخاصة بك.', 'هدايا مناسبات مع تغليف بسيط وراقي.']
+            { name: 'حقيبة يد صغيرة', details: 'متوفرة الآن - لون بيج وكحلي', price: '2800 دج', image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80' },
+            { name: 'غطاء هاتف', details: 'متوفر الآن - مقاسات محددة', price: '1500 دج', image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80' }
+          ]
         },
         clothes: {
           title: 'قسم الملابس',
+          shortLabel: 'ملابس',
           description: 'ملابس كروشيه مريحة ومميزة للأطفال والكبار، مع تنفيذ المقاسات الموسمية حسب الطلب.',
+          custom: ['تفصيل حسب المقاس الدقيق للزبون.', 'اختيار ألوان خاصة أو موديل من صورة.', 'تنفيذ أطقم أم وطفل أو هدايا مواليد.'],
           available: [
-            { name: 'طاقم رضيع', details: 'متوفر الآن - حتى عمر 6 أشهر', price: '3200 دج' },
-            { name: 'شال خفيف', details: 'متوفر الآن - لونان', price: '2400 دج' },
-            { name: 'قبعة شتوية', details: 'متوفرة الآن - عدة ألوان', price: '1300 دج' },
-            { name: 'صديري نسائي', details: 'متوفر الآن - مقاس متوسط', price: '3900 دج' }
-          ],
-          custom: ['تفصيل حسب المقاس الدقيق للزبون.', 'اختيار ألوان خاصة أو موديل من صورة.', 'تنفيذ أطقم أم وطفل أو هدايا مواليد.']
+            { name: 'طاقم رضيع', details: 'متوفر الآن - حتى عمر 6 أشهر', price: '3200 دج', image: 'https://images.unsplash.com/photo-1519238359922-989348752efb?auto=format&fit=crop&w=900&q=80' },
+            { name: 'شال خفيف', details: 'متوفر الآن - لونان', price: '2400 دج', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80' }
+          ]
         },
         decor: {
           title: 'قسم ديكور المنزل',
+          shortLabel: 'ديكور المنزل',
           description: 'لمسات منزلية دافئة وعملية من الكروشيه تزيد أناقة المكان، سواء للصالون أو المطبخ أو غرف النوم.',
+          custom: ['مفارش حسب مقاس الطاولة أو الكومود.', 'سلال تنظيم بأحجام متعددة.', 'تنفيذ ديكور للضيافة والمناسبات الخاصة.'],
           available: [
-            { name: 'مفرش طاولة دائري', details: 'متوفر الآن - مقاسان', price: '2100 دج' },
-            { name: 'سلة تخزين', details: 'متوفرة الآن - حجم متوسط', price: '2600 دج' },
-            { name: 'غطاء وسادة', details: 'متوفر الآن - 2 تصاميم', price: '1900 دج' },
-            { name: 'تعليقة حائط', details: 'متوفرة الآن - لون طبيعي', price: '2300 دج' }
-          ],
-          custom: ['مفارش حسب مقاس الطاولة أو الكومود.', 'سلال تنظيم بأحجام متعددة.', 'تنفيذ ديكور للضيافة والمناسبات الخاصة.']
+            { name: 'مفرش طاولة دائري', details: 'متوفر الآن - مقاسان', price: '2100 دج', image: 'https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80' },
+            { name: 'سلة تخزين', details: 'متوفرة الآن - حجم متوسط', price: '2600 دج', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80' }
+          ]
         }
       };
 
@@ -325,49 +423,127 @@
       const descEl = document.getElementById('category-description');
       const availableList = document.getElementById('available-list');
       const customList = document.getElementById('custom-list');
-      const buttons = document.querySelectorAll('.category-btn');
+      const categoryButtons = document.getElementById('category-buttons');
       const form = document.getElementById('custom-order-form');
+      const categorySelect = document.getElementById('category-select');
       const fileInput = document.getElementById('reference-image');
       const fileName = document.getElementById('file-name');
       const clearDraftButton = document.getElementById('clear-draft');
       const statusBox = document.getElementById('form-status');
       const formFields = Array.from(form.querySelectorAll('input[name], select[name], textarea[name]'));
+      const ownerLogoTrigger = document.getElementById('owner-logo-trigger');
+      const ownerPanel = document.getElementById('owner-panel');
+      const closeOwnerPanel = document.getElementById('close-owner-panel');
+      const ownerLoginView = document.getElementById('owner-login-view');
+      const ownerDashboard = document.getElementById('owner-dashboard');
+      const ownerLoginForm = document.getElementById('owner-login-form');
+      const ownerPinInput = document.getElementById('owner-pin-input');
+      const ownerLoginStatus = document.getElementById('owner-login-status');
+      const firebaseKeyInput = document.getElementById('firebase-key-input');
+      const saveFirebaseKeyButton = document.getElementById('save-firebase-key');
+      const firebaseStatus = document.getElementById('firebase-status');
+      const requestsList = document.getElementById('requests-list');
+      const clearRequestsButton = document.getElementById('clear-requests');
+      const categoryForm = document.getElementById('category-form');
+      const categoryStatus = document.getElementById('category-status');
+      const productForm = document.getElementById('product-form');
+      const ownerCategorySelect = document.getElementById('owner-category-select');
+      const productStatus = document.getElementById('product-status');
+
+      let categories = loadStoredCategories();
+      let activeCategoryKey = Object.keys(categories)[0];
+
+      function loadStoredCategories() {
+        try {
+          const stored = JSON.parse(localStorage.getItem(CATEGORIES_KEY));
+          if (stored && typeof stored === 'object' && Object.keys(stored).length) {
+            return stored;
+          }
+        } catch {}
+        localStorage.setItem(CATEGORIES_KEY, JSON.stringify(defaultCategories));
+        return structuredClone(defaultCategories);
+      }
+
+      function saveCategories() {
+        localStorage.setItem(CATEGORIES_KEY, JSON.stringify(categories));
+      }
+
+      function getStoredRequests() {
+        try {
+          return JSON.parse(localStorage.getItem(REQUESTS_KEY)) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveRequests(requests) {
+        localStorage.setItem(REQUESTS_KEY, JSON.stringify(requests));
+      }
+
+      function showMessage(element, message, type) {
+        element.textContent = message;
+        element.className = 'mt-4 rounded-[1.5rem] px-4 py-3 text-sm font-bold';
+        element.classList.add(
+          type === 'success' ? 'bg-green-100' : 'bg-amber-100',
+          type === 'success' ? 'text-green-800' : 'text-amber-800'
+        );
+      }
+
+      function renderCategoryButtons() {
+        categoryButtons.innerHTML = Object.entries(categories)
+          .map(
+            ([key, category]) => `
+              <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft ${key === activeCategoryKey ? 'ring-2 ring-brand-rose' : ''}" data-category="${key}">
+                <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">${category.shortLabel}</span>
+                <h3 class="mb-3 text-2xl font-extrabold">${category.title}</h3>
+                <p class="text-sm leading-7 text-brand-mocha/80">${category.description}</p>
+              </button>
+            `
+          )
+          .join('');
+
+        categoryButtons.querySelectorAll('.category-btn').forEach((button) => {
+          button.addEventListener('click', () => {
+            activeCategoryKey = button.dataset.category;
+            renderCategory(activeCategoryKey);
+            renderCategoryButtons();
+          });
+        });
+      }
+
+      function renderCategoryOptions() {
+        const options = Object.entries(categories)
+          .map(([key, category]) => `<option value="${category.shortLabel}" data-key="${key}">${category.shortLabel}</option>`)
+          .join('');
+        categorySelect.innerHTML = `${options}<option value="طلب مختلف">طلب مختلف</option>`;
+        ownerCategorySelect.innerHTML = Object.entries(categories)
+          .map(([key, category]) => `<option value="${key}">${category.shortLabel}</option>`)
+          .join('');
+      }
 
       function renderCategory(key) {
         const category = categories[key];
+        if (!category) return;
+
         titleEl.textContent = category.title;
         descEl.textContent = category.description;
         availableList.innerHTML = category.available
           .map(
             (item) => `
-              <article class="rounded-[1.75rem] border border-brand-sand bg-brand-cream p-5">
-                <p class="mb-3 text-xs font-bold text-brand-rose">جاهز أو شبه جاهز</p>
-                <h4 class="text-lg font-extrabold text-brand-mocha">${item.name}</h4>
-                <p class="mt-2 text-sm leading-7 text-brand-mocha/80">${item.details}</p>
-                <p class="mt-4 text-sm font-bold text-brand-olive">${item.price}</p>
+              <article class="overflow-hidden rounded-[1.75rem] border border-brand-sand bg-brand-cream">
+                <img src="${item.image}" alt="${item.name}" class="h-52 w-full object-cover" />
+                <div class="p-5">
+                  <p class="mb-3 text-xs font-bold text-brand-rose">جاهز أو شبه جاهز</p>
+                  <h4 class="text-lg font-extrabold text-brand-mocha">${item.name}</h4>
+                  <p class="mt-2 text-sm leading-7 text-brand-mocha/80">${item.details}</p>
+                  <p class="mt-4 text-sm font-bold text-brand-olive">${item.price}</p>
+                </div>
               </article>
             `
           )
           .join('');
 
-        customList.innerHTML = category.custom
-          .map((item) => `<li class="rounded-2xl bg-white/70 px-4 py-3">• ${item}</li>`)
-          .join('');
-
-        buttons.forEach((button) => {
-          const isActive = button.dataset.category === key;
-          button.classList.toggle('ring-2', isActive);
-          button.classList.toggle('ring-brand-rose', isActive);
-        });
-      }
-
-      function showStatus(message, type) {
-        statusBox.textContent = message;
-        statusBox.className = 'mt-6 rounded-[1.5rem] px-4 py-3 text-sm font-bold';
-        statusBox.classList.add(
-          type === 'success' ? 'bg-green-100' : 'bg-amber-100',
-          type === 'success' ? 'text-green-800' : 'text-amber-800'
-        );
+        customList.innerHTML = category.custom.map((item) => `<li class="rounded-2xl bg-white/70 px-4 py-3">• ${item}</li>`).join('');
       }
 
       function updateFileName() {
@@ -375,20 +551,13 @@
       }
 
       function saveDraft() {
-        const draft = Object.fromEntries(
-          formFields
-            .filter((field) => field.type !== 'file')
-            .map((field) => [field.name, field.value])
-        );
+        const draft = Object.fromEntries(formFields.filter((field) => field.type !== 'file').map((field) => [field.name, field.value]));
         localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
       }
 
       function loadDraft() {
         const rawDraft = localStorage.getItem(DRAFT_KEY);
-        if (!rawDraft) {
-          return;
-        }
-
+        if (!rawDraft) return;
         try {
           const draft = JSON.parse(rawDraft);
           formFields.forEach((field) => {
@@ -396,7 +565,7 @@
               field.value = draft[field.name];
             }
           });
-          showStatus('تمت استعادة آخر مسودة طلب محفوظة على هذا الجهاز.', 'success');
+          showMessage(statusBox, 'تمت استعادة آخر مسودة طلب محفوظة على هذا الجهاز.', 'success');
         } catch {
           localStorage.removeItem(DRAFT_KEY);
         }
@@ -405,6 +574,7 @@
       function clearDraft() {
         localStorage.removeItem(DRAFT_KEY);
         form.reset();
+        renderCategoryOptions();
         updateFileName();
         statusBox.className = 'mt-6 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold';
       }
@@ -420,8 +590,119 @@
         ].join('\n');
       }
 
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => renderCategory(button.dataset.category));
+      function renderRequests() {
+        const requests = getStoredRequests();
+        requestsList.innerHTML = requests.length
+          ? requests
+              .map(
+                (request) => `
+                  <article class="rounded-[1.5rem] border border-brand-sand bg-brand-cream p-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <h4 class="text-lg font-extrabold text-brand-mocha">${request.firstName} ${request.lastName}</h4>
+                      <span class="rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-rose">${request.date}</span>
+                    </div>
+                    <div class="mt-3 grid gap-2 text-sm text-brand-mocha/85 md:grid-cols-2">
+                      <p><span class="font-bold">الهاتف:</span> ${request.phone}</p>
+                      <p><span class="font-bold">القسم:</span> ${request.category}</p>
+                      <p class="md:col-span-2"><span class="font-bold">الوصف:</span> ${request.details}</p>
+                      <p class="md:col-span-2"><span class="font-bold">الصورة المرجعية:</span> ${request.referenceImage || 'لم تُرفق صورة'}</p>
+                    </div>
+                  </article>
+                `
+              )
+              .join('')
+          : '<div class="rounded-[1.5rem] border border-dashed border-brand-sand bg-brand-cream p-6 text-sm font-bold text-brand-mocha/80">لا توجد طلبات محفوظة حالياً.</div>';
+      }
+
+      function openOwnerPanel() {
+        ownerPanel.classList.remove('hidden');
+        const isLoggedIn = localStorage.getItem(OWNER_SESSION_KEY) === 'open';
+        ownerLoginView.classList.toggle('hidden', isLoggedIn);
+        ownerDashboard.classList.toggle('hidden', !isLoggedIn);
+        if (isLoggedIn) {
+          firebaseKeyInput.value = localStorage.getItem(FIREBASE_KEY_STORAGE) || '';
+          renderRequests();
+        }
+      }
+
+      function closePanel() {
+        ownerPanel.classList.add('hidden');
+      }
+
+      ownerLogoTrigger.addEventListener('dblclick', openOwnerPanel);
+      closeOwnerPanel.addEventListener('click', closePanel);
+      ownerPanel.addEventListener('click', (event) => {
+        if (event.target === ownerPanel) closePanel();
+      });
+
+      ownerLoginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (ownerPinInput.value.trim() !== OWNER_PIN) {
+          showMessage(ownerLoginStatus, 'الرقم السري غير صحيح. جرّب 11020.', 'warning');
+          return;
+        }
+
+        localStorage.setItem(OWNER_SESSION_KEY, 'open');
+        ownerPinInput.value = '';
+        ownerLoginStatus.className = 'mt-4 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold';
+        ownerLoginView.classList.add('hidden');
+        ownerDashboard.classList.remove('hidden');
+        firebaseKeyInput.value = localStorage.getItem(FIREBASE_KEY_STORAGE) || '';
+        renderRequests();
+      });
+
+      saveFirebaseKeyButton.addEventListener('click', () => {
+        localStorage.setItem(FIREBASE_KEY_STORAGE, firebaseKeyInput.value.trim());
+        showMessage(firebaseStatus, 'تم حفظ مكان مفتاح Firebase بنجاح داخل المتصفح.', 'success');
+      });
+
+      clearRequestsButton.addEventListener('click', () => {
+        saveRequests([]);
+        renderRequests();
+      });
+
+      categoryForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(categoryForm);
+        const name = formData.get('name').trim();
+        const description = formData.get('description').trim();
+        const key = `custom-${Date.now()}`;
+        categories[key] = {
+          title: `قسم ${name}`,
+          shortLabel: name,
+          description,
+          custom: ['تنفيذ ألوان خاصة لهذا القسم.', 'تخصيص الحجم أو المقاس حسب الطلب.', 'إضافة لمسات وهدايا تناسب المناسبة.'],
+          available: []
+        };
+        saveCategories();
+        activeCategoryKey = key;
+        renderCategoryButtons();
+        renderCategoryOptions();
+        renderCategory(activeCategoryKey);
+        categoryForm.reset();
+        showMessage(categoryStatus, 'تمت إضافة الفئة الجديدة بنجاح.', 'success');
+      });
+
+      productForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(productForm);
+        const categoryKey = formData.get('category');
+        const product = {
+          name: formData.get('name').trim(),
+          price: formData.get('price').trim(),
+          details: formData.get('details').trim(),
+          image: formData.get('image').trim()
+        };
+
+        categories[categoryKey].available.unshift(product);
+        saveCategories();
+        activeCategoryKey = categoryKey;
+        renderCategoryButtons();
+        renderCategory(activeCategoryKey);
+        productForm.reset();
+        renderCategoryOptions();
+        ownerCategorySelect.value = categoryKey;
+        showMessage(productStatus, 'تمت إضافة المنتج بالصورة والفئة والشرح والسعر.', 'success');
       });
 
       fileInput.addEventListener('change', () => {
@@ -438,7 +719,6 @@
 
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-
         const formData = new FormData(form);
         const payload = {
           firstName: formData.get('firstName').trim(),
@@ -446,23 +726,33 @@
           phone: formData.get('phone').trim(),
           category: formData.get('category').trim(),
           details: formData.get('details').trim(),
-          referenceImage: fileInput.files.length ? fileInput.files[0].name : ''
+          referenceImage: fileInput.files.length ? fileInput.files[0].name : '',
+          date: new Date().toLocaleString('ar-DZ')
         };
 
         if (!payload.firstName || !payload.lastName || !payload.phone || !payload.details) {
-          showStatus('يرجى ملء الاسم واللقب ورقم الهاتف ووصف الطلب قبل الإرسال.', 'warning');
+          showMessage(statusBox, 'يرجى ملء الاسم واللقب ورقم الهاتف ووصف الطلب قبل الإرسال.', 'warning');
           return;
         }
 
+        const requests = getStoredRequests();
+        requests.unshift(payload);
+        saveRequests(requests);
+        renderRequests();
+
         const whatsappUrl = `https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(buildWhatsAppMessage(payload))}`;
         window.open(whatsappUrl, '_blank', 'noopener');
-        showStatus('تم تجهيز الطلب وفتح واتساب في تبويب جديد. لا تنسَ إرفاق الصورة يدوياً إذا كانت مطلوبة.', 'success');
+        showMessage(statusBox, 'تم تجهيز الطلب وحفظه في واجهة صاحب المشروع وفتح واتساب في تبويب جديد.', 'success');
         localStorage.removeItem(DRAFT_KEY);
       });
 
       updateFileName();
+      renderCategoryButtons();
+      renderCategoryOptions();
       loadDraft();
-      renderCategory('amigurumi');
+      renderCategory(activeCategoryKey);
+      firebaseKeyInput.value = localStorage.getItem(FIREBASE_KEY_STORAGE) || '';
+      renderRequests();
     </script>
   </body>
 </html>
