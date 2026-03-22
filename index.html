@@ -190,28 +190,32 @@
                 </ul>
               </div>
             </div>
+            <div class="mt-6 rounded-[1.5rem] bg-white/10 p-5 text-sm leading-7 text-white/85">
+              <p class="font-bold text-white">الآن النموذج عملي:</p>
+              <p>بعد الإرسال سيُفتح واتساب برسالة جاهزة بكل التفاصيل، مع حفظ نسخة احتياطية من الطلب داخل المتصفح حتى لا تضيع البيانات قبل الإرسال.</p>
+            </div>
           </div>
 
-          <form class="rounded-[2rem] bg-white p-8 shadow-soft">
+          <form id="custom-order-form" class="rounded-[2rem] bg-white p-8 shadow-soft">
             <div class="grid gap-6 md:grid-cols-2">
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-brand-mocha">الاسم</span>
-                <input type="text" placeholder="اكتب الاسم" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+                <input id="first-name" name="firstName" type="text" placeholder="اكتب الاسم" required class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
               </label>
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-brand-mocha">اللقب</span>
-                <input type="text" placeholder="اكتب اللقب" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+                <input id="last-name" name="lastName" type="text" placeholder="اكتب اللقب" required class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
               </label>
             </div>
 
             <div class="mt-6 grid gap-6 md:grid-cols-2">
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-brand-mocha">رقم الهاتف</span>
-                <input type="tel" placeholder="مثال: 0550000000" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+                <input id="phone" name="phone" type="tel" placeholder="مثال: 0550000000" required class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
               </label>
               <label class="block">
                 <span class="mb-2 block text-sm font-bold text-brand-mocha">القسم الأقرب للطلب</span>
-                <select class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose">
+                <select id="category-select" name="category" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose">
                   <option>أميغورومي</option>
                   <option>إكسسوارات</option>
                   <option>ملابس</option>
@@ -223,18 +227,30 @@
 
             <label class="mt-6 block">
               <span class="mb-2 block text-sm font-bold text-brand-mocha">وصف ما تريد صنعه</span>
-              <textarea rows="5" placeholder="اكتب المقاس، الألوان، المناسبة، أو أي تفاصيل إضافية..." class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></textarea>
+              <textarea id="details" name="details" rows="5" placeholder="اكتب المقاس، الألوان، المناسبة، أو أي تفاصيل إضافية..." required class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></textarea>
             </label>
 
             <label class="mt-6 block rounded-[1.5rem] border-2 border-dashed border-brand-rose bg-brand-cream p-6 text-center">
               <span class="mb-3 block text-sm font-bold text-brand-mocha">صورة ما تريد أن نصنعه لك</span>
-              <input id="reference-image" type="file" accept="image/*" class="mx-auto block w-full max-w-sm text-sm text-brand-mocha file:ml-4 file:rounded-full file:border-0 file:bg-brand-mocha file:px-4 file:py-2 file:font-bold file:text-white hover:file:bg-brand-rose" />
+              <input id="reference-image" name="referenceImage" type="file" accept="image/*" class="mx-auto block w-full max-w-sm text-sm text-brand-mocha file:ml-4 file:rounded-full file:border-0 file:bg-brand-mocha file:px-4 file:py-2 file:font-bold file:text-white hover:file:bg-brand-rose" />
               <span id="file-name" class="mt-3 block text-sm text-brand-mocha/75">لم يتم اختيار أي صورة بعد.</span>
             </label>
 
-            <button type="submit" class="mt-8 w-full rounded-full bg-brand-rose px-6 py-4 text-base font-extrabold text-white transition hover:bg-brand-mocha">
-              إرسال الطلب الخاص
-            </button>
+            <div class="mt-6 rounded-[1.5rem] bg-brand-cream p-4 text-sm text-brand-mocha/85">
+              <p class="font-bold text-brand-mocha">تنبيه:</p>
+              <p>واتساب لا يرفق الصورة تلقائياً من المتصفح، لذلك سيُفتح لك الطلب كنص جاهز مع اسم الصورة المختارة حتى تتمكن من إرسالها مباشرة بعد فتح المحادثة.</p>
+            </div>
+
+            <div id="form-status" class="mt-6 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold"></div>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <button type="submit" class="w-full rounded-full bg-brand-rose px-6 py-4 text-base font-extrabold text-white transition hover:bg-brand-mocha">
+                إرسال الطلب عبر واتساب
+              </button>
+              <button id="clear-draft" type="button" class="w-full rounded-full border border-brand-mocha px-6 py-4 text-base font-bold text-brand-mocha transition hover:bg-brand-cream">
+                مسح المسودة
+              </button>
+            </div>
           </form>
         </div>
       </section>
@@ -247,7 +263,7 @@
           <p class="mt-2 text-sm text-white/75">موقع كروشيه عربي يعرض المتوفر وما يمكن صنعه، مع استقبال الطلبات الخاصة بسهولة.</p>
         </div>
         <div class="flex flex-wrap gap-3 text-sm text-white/80">
-          <span class="rounded-full bg-white/10 px-4 py-2">واتساب: 0000 000 00</span>
+          <a href="https://wa.me/213550000000" target="_blank" rel="noreferrer" class="rounded-full bg-white/10 px-4 py-2 transition hover:bg-white/20">واتساب: 0550 000 000</a>
           <span class="rounded-full bg-white/10 px-4 py-2">إنستغرام: @your.crochet.store</span>
           <span class="rounded-full bg-white/10 px-4 py-2">الرد على الطلبات خلال 24 ساعة</span>
         </div>
@@ -255,6 +271,9 @@
     </footer>
 
     <script>
+      const STORE_PHONE = '213550000000';
+      const DRAFT_KEY = 'custom-order-draft';
+
       const categories = {
         amigurumi: {
           title: 'قسم الأميغورومي',
@@ -307,6 +326,12 @@
       const availableList = document.getElementById('available-list');
       const customList = document.getElementById('custom-list');
       const buttons = document.querySelectorAll('.category-btn');
+      const form = document.getElementById('custom-order-form');
+      const fileInput = document.getElementById('reference-image');
+      const fileName = document.getElementById('file-name');
+      const clearDraftButton = document.getElementById('clear-draft');
+      const statusBox = document.getElementById('form-status');
+      const formFields = Array.from(form.querySelectorAll('input[name], select[name], textarea[name]'));
 
       function renderCategory(key) {
         const category = categories[key];
@@ -336,16 +361,107 @@
         });
       }
 
+      function showStatus(message, type) {
+        statusBox.textContent = message;
+        statusBox.className = 'mt-6 rounded-[1.5rem] px-4 py-3 text-sm font-bold';
+        statusBox.classList.add(
+          type === 'success' ? 'bg-green-100' : 'bg-amber-100',
+          type === 'success' ? 'text-green-800' : 'text-amber-800'
+        );
+      }
+
+      function updateFileName() {
+        fileName.textContent = fileInput.files.length ? `الصورة المختارة: ${fileInput.files[0].name}` : 'لم يتم اختيار أي صورة بعد.';
+      }
+
+      function saveDraft() {
+        const draft = Object.fromEntries(
+          formFields
+            .filter((field) => field.type !== 'file')
+            .map((field) => [field.name, field.value])
+        );
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      }
+
+      function loadDraft() {
+        const rawDraft = localStorage.getItem(DRAFT_KEY);
+        if (!rawDraft) {
+          return;
+        }
+
+        try {
+          const draft = JSON.parse(rawDraft);
+          formFields.forEach((field) => {
+            if (field.type !== 'file' && typeof draft[field.name] === 'string') {
+              field.value = draft[field.name];
+            }
+          });
+          showStatus('تمت استعادة آخر مسودة طلب محفوظة على هذا الجهاز.', 'success');
+        } catch {
+          localStorage.removeItem(DRAFT_KEY);
+        }
+      }
+
+      function clearDraft() {
+        localStorage.removeItem(DRAFT_KEY);
+        form.reset();
+        updateFileName();
+        statusBox.className = 'mt-6 hidden rounded-[1.5rem] px-4 py-3 text-sm font-bold';
+      }
+
+      function buildWhatsAppMessage(data) {
+        return [
+          'مرحباً، أريد طلب تصميم كروشيه خاص.',
+          `الاسم الكامل: ${data.firstName} ${data.lastName}`,
+          `رقم الهاتف: ${data.phone}`,
+          `القسم: ${data.category}`,
+          `تفاصيل الطلب: ${data.details}`,
+          `الصورة المرجعية: ${data.referenceImage || 'لا توجد صورة مرفقة من المتصفح'}`
+        ].join('\n');
+      }
+
       buttons.forEach((button) => {
         button.addEventListener('click', () => renderCategory(button.dataset.category));
       });
 
-      const fileInput = document.getElementById('reference-image');
-      const fileName = document.getElementById('file-name');
       fileInput.addEventListener('change', () => {
-        fileName.textContent = fileInput.files.length ? `الصورة المختارة: ${fileInput.files[0].name}` : 'لم يتم اختيار أي صورة بعد.';
+        updateFileName();
+        saveDraft();
       });
 
+      formFields.forEach((field) => {
+        field.addEventListener('input', saveDraft);
+        field.addEventListener('change', saveDraft);
+      });
+
+      clearDraftButton.addEventListener('click', clearDraft);
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const payload = {
+          firstName: formData.get('firstName').trim(),
+          lastName: formData.get('lastName').trim(),
+          phone: formData.get('phone').trim(),
+          category: formData.get('category').trim(),
+          details: formData.get('details').trim(),
+          referenceImage: fileInput.files.length ? fileInput.files[0].name : ''
+        };
+
+        if (!payload.firstName || !payload.lastName || !payload.phone || !payload.details) {
+          showStatus('يرجى ملء الاسم واللقب ورقم الهاتف ووصف الطلب قبل الإرسال.', 'warning');
+          return;
+        }
+
+        const whatsappUrl = `https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(buildWhatsAppMessage(payload))}`;
+        window.open(whatsappUrl, '_blank', 'noopener');
+        showStatus('تم تجهيز الطلب وفتح واتساب في تبويب جديد. لا تنسَ إرفاق الصورة يدوياً إذا كانت مطلوبة.', 'success');
+        localStorage.removeItem(DRAFT_KEY);
+      });
+
+      updateFileName();
+      loadDraft();
       renderCategory('amigurumi');
     </script>
   </body>
