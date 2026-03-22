@@ -1,928 +1,352 @@
-<!-- Design System -->
 <!DOCTYPE html>
-
-<html dir="rtl" lang="ar"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دفء الغرز | متجر الكروشيه</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary-fixed": "#c5eccc",
-              "tertiary": "#7f535c",
-              "outline-variant": "#b5b1ad",
-              "tertiary-dim": "#714750",
-              "secondary": "#7e572e",
-              "tertiary-fixed-dim": "#edb5c0",
-              "secondary-container": "#ffdcbd",
-              "secondary-fixed": "#ffdcbd",
-              "error-dim": "#67040d",
-              "inverse-on-surface": "#a09c9a",
-              "on-secondary": "#fff7f4",
-              "surface-dim": "#ded9d5",
-              "on-secondary-container": "#6f4a22",
-              "surface-container-lowest": "#ffffff",
-              "outline": "#7d7a76",
-              "inverse-primary": "#d3fbda",
-              "on-tertiary-container": "#643c45",
-              "surface-container-low": "#f8f3ef",
-              "on-primary": "#e8ffea",
-              "on-error": "#fff7f6",
-              "background": "#fdf8f5",
-              "tertiary-fixed": "#fcc3ce",
-              "surface": "#fdf8f5",
-              "primary-container": "#c5eccc",
-              "surface-bright": "#fdf8f5",
-              "on-tertiary-fixed-variant": "#6e454e",
-              "surface-variant": "#e7e2dd",
-              "surface-container-highest": "#e7e2dd",
-              "secondary-dim": "#704b23",
-              "on-primary-container": "#375941",
-              "error-container": "#fa746f",
-              "primary-fixed-dim": "#b7debe",
-              "on-primary-fixed-variant": "#41634a",
-              "on-surface-variant": "#615f5b",
-              "error": "#a83836",
-              "surface-tint": "#44674d",
-              "secondary-fixed-dim": "#ffca98",
-              "inverse-surface": "#0f0e0d",
-              "on-secondary-fixed-variant": "#7a532a",
-              "primary-dim": "#385b42",
-              "tertiary-container": "#fcc3ce",
-              "on-surface": "#34322f",
-              "on-error-container": "#6e0a12",
-              "surface-container-high": "#ece7e3",
-              "on-tertiary": "#fff7f7",
-              "on-primary-fixed": "#25462f",
-              "on-secondary-fixed": "#5a3811",
-              "on-background": "#34322f",
-              "primary": "#44674d",
-              "on-tertiary-fixed": "#4e2932",
-              "surface-container": "#f2ede9"
+              brand: {
+                cream: '#fff8f2',
+                sand: '#f2e6dc',
+                rose: '#d9968a',
+                mocha: '#6f4e37',
+                olive: '#728c69',
+                dark: '#2e241f'
+              }
             },
             fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Plus Jakarta Sans"],
-              "label": ["Plus Jakarta Sans"]
+              cairo: ['Cairo', 'sans-serif']
             },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .asymmetric-grain {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.03;
-      }
-    </style>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation Bar -->
-<nav class="bg-[#fdf8f5]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-md font-['Noto_Serif'] leading-relaxed text-[#34322f] dark:text-[#ece7e3] docked full-width top-0 sticky z-50">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<div class="flex items-center gap-12">
-<a class="text-2xl font-bold text-[#44674d] dark:text-[#c5eccc]" href="#">متجر الكروشييه</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-[#44674d] dark:text-[#c5eccc] font-bold border-b-2 border-[#44674d] pb-1" href="#">الرئيسية</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الأميغورومي</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الإكسسوارات</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الملابس</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">ديكور المنزل</a>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden sm:flex items-center bg-surface-container-high rounded-full px-4 py-2">
-<span class="material-symbols-outlined text-outline text-lg">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-right font-body" placeholder="ابحث عن قطعة فنية..." type="text"/>
-</div>
-<div class="flex items-center gap-4">
-<button class="hover:bg-[#ece7e3]/50 dark:hover:bg-[#34322f]/50 transition-all duration-300 p-2 rounded-full scale-95 duration-200 ease-in-out">
-<span class="material-symbols-outlined text-[#44674d]" data-icon="shopping_basket">shopping_basket</span>
-</button>
-<button class="hover:bg-[#ece7e3]/50 dark:hover:bg-[#34322f]/50 transition-all duration-300 p-2 rounded-full scale-95 duration-200 ease-in-out">
-<span class="material-symbols-outlined text-[#44674d]" data-icon="person">person</span>
-</button>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity">
-                        طلب خاص
-                    </button>
-</div>
-</div>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-[870px] flex items-center overflow-hidden pt-12">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/5 -z-10"></div>
-<div class="absolute inset-0 asymmetric-grain -z-10"></div>
-<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="order-2 lg:order-1">
-<span class="inline-block bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-sm font-medium mb-6">صُنع بحب وشغف</span>
-<h1 class="font-headline text-5xl md:text-7xl text-on-surface leading-[1.2] mb-8">ننسج من خيوط الصوف <span class="text-primary italic font-light">حكايات دافئة</span></h1>
-<p class="text-on-surface-variant text-lg md:text-xl max-w-xl mb-12 leading-relaxed">اكتشف روعة الكروشيه اليدوي في تصاميم تجمع بين الأصالة والعصرية. كل قطعة لدينا هي تحفة فريدة صُممت لتدوم طويلاً.</p>
-<div class="flex flex-wrap gap-4">
-<a class="bg-primary text-on-primary px-10 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all" href="#collections">تصفح المجموعات</a>
-<a class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all" href="#about">قصتنا</a>
-</div>
-</div>
-<div class="order-1 lg:order-2 relative">
-<div class="relative w-full aspect-square">
-<div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-xl overflow-hidden rotate-3 z-20 shadow-2xl">
-<img class="w-full h-full object-cover" data-alt="Close up of handmade crochet yarn textures in soft colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy7qFd__Jl-zvsXGSkdLhlWFQ_GU2jw0Ovw36UwhCcTVX6onspH4RKyEyo7r2hI4W5vxG2N1TnHEb29ZJObP_H3W9dLQ3F5oOFU1oeGItzFbXRTrqRejKgAZPelVbdkl0rp87KNCuoCN-I6FPzpl4ChbU_vgy_RxC-VtcE_aAImKja9MJNbmIwsBTc_vmmh9Prdvqeqpc4mwySUwg0P_hpn8hSxrDf1NBj8DfLAPdPARK4ZoPCTLBXSRC2NjoClHic2NXW_oWk_AOK"/>
-</div>
-<div class="absolute bottom-0 left-0 w-3/4 h-3/4 rounded-xl overflow-hidden -rotate-6 z-10 opacity-80">
-<img class="w-full h-full object-cover" data-alt="Artisanal crochet tools and colorful yarn balls on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLLfVwC-5_zzEtBrr1g-s4WzGoMaEWJK-VO0zVf36pKGVSfBgg9yr6atkPbtuXJaMLRHxYzpUtDjPd65JXunGyo84Cp89gkWvyRbzEKCR3eVVc6R9v_mnWS74nRQvFDNbRXboIrwzHpaO4s5pa1Z_aJBZ43K0VqTupm6AzmbNeT-xSpM4PS8iAHx-h7f9TMJZ810-ezSHxBnvAbHn9OsQr9TVug4kV_YRR_EZ5ZX6Zkg5kTkdD47oDMCRWT-0jJ_8pRKItHfVo9hkI"/>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Definition Section (About) -->
-<section class="py-24 bg-surface-container-low" id="about">
-<div class="max-w-7xl mx-auto px-8">
-<div class="bg-surface-container-lowest rounded-xl p-12 md:p-20 flex flex-col md:flex-row gap-16 items-center">
-<div class="w-full md:w-1/2">
-<div class="rounded-lg overflow-hidden h-[500px]">
-<img class="w-full h-full object-cover" data-alt="Hands knitting with wooden needles and white soft wool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWoWmClUOMYGcw94G5TCHEqZ4mH238jOCliQ1ZcmPRWBFCVEfCYxF8UarOlGTjBjSGEsiqLGOkkMjOdaKpsVp4xbthsN3nFohjhSu31R_s0EAYYOgqKUO-z3HHIs3MVLUInZpcxSrIqM4Tzc-H9Obh-vjK6oxajmF7Nvt38oPgDOG86DwoctemNBbpZxBdfA4nZYPMOJMMzX27m7gT35QZodDSJMfk7uR17WQwH8ZHGqbBCbnPPvxx3qGqKS_UICkigMauU0snGps0"/>
-</div>
-</div>
-<div class="w-full md:w-1/2">
-<h2 class="font-headline text-4xl text-on-surface mb-8 italic">ما وراء الغرزة...</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-                            بدأ متجر الكروشيه كحلم بسيط في زاوية صغيرة، محوره تقدير العمل اليدوي والجمال الهادئ. نحن نؤمن أن الخيوط ليست مجرد مادة خام، بل هي وسيلة للتعبير عن المشاعر وتجميل المساحات.
-                        </p>
-<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                            كل قطعة في متجرنا تمر بمراحل عديدة من العناية؛ من اختيار أجود أنواع الخيوط الطبيعية إلى اللمسات النهائية التي تضمن لك قطعة فنية تدوم لأجيال.
-                        </p>
-<ul class="space-y-4">
-<li class="flex items-center gap-3 text-secondary font-medium">
-<span class="material-symbols-outlined">check_circle</span>
-<span>صناعة يدوية 100% بكل فخر</span>
-</li>
-<li class="flex items-center gap-3 text-secondary font-medium">
-<span class="material-symbols-outlined">eco</span>
-<span>مواد صديقة للبيئة وخيوط طبيعية</span>
-</li>
-<li class="flex items-center gap-3 text-secondary font-medium">
-<span class="material-symbols-outlined">design_services</span>
-<span>إمكانية التخصيص حسب طلبك</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Categories Section (Bento Grid) -->
-<section class="py-24" id="collections">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-16">
-<h2 class="font-headline text-4xl text-on-surface mb-4">اكتشف عالمنا المنسوج</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto">تصفح أقسامنا المتنوعة المختارة بعناية لتناسب ذوقك واحتياجاتك</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
-<!-- Amigurumi -->
-<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-high transition-transform duration-500 hover:-translate-y-2">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cute handmade amigurumi toy animals on a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbTxQiXXo8BTfZLacMPEuypIjchKECBjimG760R9-k9kHrNt7omcupi9FZ5ahCf4m3nt7thcdVIzYpFy-B-gwd0ZKYpMfrCNDFOjGMDabhSyqUGfNFFq3tocWKM5JNwNXByn_cEYluS29LQ32a7KwwDTxdU3NkCSkKAheH_LX5noG-3fP5ceF1Df_zIzqSEaWxQuQdQdheoyPMMtjmAVPvcN9AjtAqKsK83SWh3sQleEnjpDcKAkfJ0JgvVD1XoZA8O_lOetdkXmIk"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-8 right-8 text-white">
-<h3 class="font-headline text-3xl mb-2">الأميغورومي</h3>
-<p class="mb-6 opacity-90">دمى محشوة يدوياً تفيض باللطف</p>
-<a class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full hover:bg-white/40 transition-colors" href="#">
-                                تسوق الآن
-                                <span class="material-symbols-outlined">arrow_left</span>
-</a>
-</div>
-</div>
-<!-- Accessories -->
-<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-high transition-transform duration-500 hover:-translate-y-2">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Crocheted bags and fashion accessories in earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfG0_KcF5x0xuJ-Y6MgLPD6byJ4yxZ5-TrXb-sDMqHvHLSo5mbW9hifFYTZjrVdCNdR1-dWt8YAdq_7O6ZVRr3-8oY7UF37gd1zp07CY2cWCejMxbvMOmnyfVxfIo48_0FwKWGky4eVqqidVH0k2vbtnNZKh7cBqYZYaTZS38e5X06oyQT3tuXu5H6SvSmpr57wEbIWVoWwvIsvs3_z_ho4k_Ph03Y8Ls4gfOr_yYllE0uSlsM8Ev8xtS01X8s-qTwmsH8EBFoxC6J"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-8 right-8 text-white">
-<h3 class="font-headline text-2xl mb-2">الإكسسوارات</h3>
-<a class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full hover:bg-white/40 transition-colors" href="#">
-                                عرض المزيد
-                            </a>
-</div>
-</div>
-<!-- Clothes -->
-<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-high transition-transform duration-500 hover:-translate-y-2">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Soft hand-knitted woolen clothes for winter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3z187EtK6tWYiXJj35pYSVZxDG6h4iEXQaKqDSPNKbA0JCNc6N9hPIrow585z5pa8tRWU_TYcO7X1y4LveJYgPA4y1brrFWQ8d3pEvEN-mMHVCl17ZqFiT8nDjU_3F-ex6iOGd2JsFdBPRVsr6xr4MzizyBWirymGTI3NY4zMAX8uChbMUNn8jR4PoJTK8hbawzCZBTwBOZf2TtCQcJku5npQxYeGpNV_2u0QMTznimEjtPpg_Gc_FC4cXRR-zWNvsK8xqTYXDGB3"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-8 right-8 text-white">
-<h3 class="font-headline text-2xl mb-2">الملابس</h3>
-<a class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full hover:bg-white/40 transition-colors" href="#">
-                                عرض المزيد
-                            </a>
-</div>
-</div>
-<!-- Home Decor -->
-<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-high transition-transform duration-500 hover:-translate-y-2">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Crocheted blankets and cushions in a cozy living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbReoCW_2G46itkWtcnvgwRpPxd4pCvoIF4bC96A-eVAspC_AZ5v8wTRyyiubqwGs5TGT7YQ8h9j7mIA_NebsDgNY12qOMtWEQ5Zqmcr4IF10NxqpHjpPFp0YXj8heI4Vu6tc2V-6EF4SSZRdTj8m6G_dZ5zW2l5pWfoW9fKj7OKggLeSdmUs0yUw3ufMGxWfDQXS-g65OXBQJ1iHDVCG3SKovbnKCdLXVU9IU7JJPwiwNq7nVXkys6wx-XdBdTXPR5XROnY3aBRxU"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-<div class="absolute bottom-8 right-8 text-white">
-<h3 class="font-headline text-3xl mb-2">ديكور المنزل</h3>
-<p class="mb-6 opacity-90">لمسات دافئة لكل زاوية في منزلك</p>
-<a class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full hover:bg-white/40 transition-colors" href="#">
-                                اكتشف القطع
-                                <span class="material-symbols-outlined">arrow_left</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Products -->
-<section class="py-24 bg-surface-container">
-<div class="max-w-7xl mx-auto px-8">
-<div class="flex justify-between items-end mb-16">
-<div>
-<h2 class="font-headline text-4xl text-on-surface mb-4">الأكثر طلباً</h2>
-<p class="text-on-surface-variant">قطع مميزة نالت إعجاب عملائنا مؤخراً</p>
-</div>
-<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">عرض الكل</a>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Product 1 -->
-<div class="group">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-6 aspect-[4/5] relative">
-<img class="w-full h-full object-cover" data-alt="Handmade small crochet doll for nursery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv3syqMxfmdxXSpRL8-6kt2jDDz8d5j0yctq2nW2xlabTNU3-T7HQ7jXmqTlFSdrH-lTP2nnUhTrvwsU8k_9IaIoDQwLAbnOwFo_rrv6KXkDMoWASM24etuFWmNAWQittJ6M4UW1movQR0FU2hsRUmNp9BzzTharNkRfV6zSi1Pv5X9FqBt-VhbpSPVJtBGq8mqGDyKS67qqv8n6UEO-4rAJVkQax6hhKaNKjVRl9Ss-OVhCPQ2T8AeQq0OxeFFYqd212AQn_aaiAq"/>
-<div class="absolute top-4 right-4 flex flex-col gap-2">
-<button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-<h4 class="font-headline text-lg text-on-surface">دمية الأرنب "نونو"</h4>
-<p class="text-secondary font-medium mb-4">١٥٠ ر.س</p>
-<button class="w-full py-3 bg-primary text-on-primary rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                            أضف للسلة
-                        </button>
-</div>
-<!-- Product 2 -->
-<div class="group">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-6 aspect-[4/5] relative">
-<img class="w-full h-full object-cover" data-alt="Handcrafted multicolored crochet bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW2eEmp0H8qW07LYpB9ytL93fVfhtFBvfHVIVFjhYfDvny5Cf8SR61dyZnkdp2JHrvvQ1829-dprVLpEWpJ_rUUhZEvOPYdeonYsfNBQCkNtb6JWAzWTvv8zeS_4L6XEOH1rKvRhA4juj_CiDEZoTkzMMuy97VW__dAtjAF4RvhOU6BsMRHwuovH22TQ6lBzzylCOrX1WFHlsqktk2GYf1hvFc1xahURiaVjz9FUPgOPLWx9BXc7XsS4vlTHeSNnmCNcAz3NbVaIeT"/>
-<div class="absolute top-4 right-4 flex flex-col gap-2">
-<button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-<h4 class="font-headline text-lg text-on-surface">حقيبة اليد البوهيمية</h4>
-<p class="text-secondary font-medium mb-4">٢٧٥ ر.س</p>
-<button class="w-full py-3 bg-primary text-on-primary rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                            أضف للسلة
-                        </button>
-</div>
-<!-- Product 3 -->
-<div class="group">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-6 aspect-[4/5] relative">
-<img class="w-full h-full object-cover" data-alt="Large cozy handmade blue blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV43jPjol3lfxV3B-eGffdr3VR6BTjs0SmGE2GheWf7PTMBjEYADajD8pFPjZjwvF9vLa7JuWGB95bLoReQ_mI8ln6z1fWxKwW5D1sjspZEstr259og-myAM7sGmm09zkFDR6NZApDRufH4-CMFFKt-3A2dKwX2TftP86lys4yuOdro8-NdnYaQMwfN3jo6OX3V16ab37SVe5OH-aiHQThSEVkKWGCcR0VIniddZcEUKKP0OsLFEDhmLDxHycgBou01JeY3cUNFgRh"/>
-<div class="absolute top-4 right-4 flex flex-col gap-2">
-<button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-<h4 class="font-headline text-lg text-on-surface">غطاء "ليالي الشتاء"</h4>
-<p class="text-secondary font-medium mb-4">٤٥٠ ر.س</p>
-<button class="w-full py-3 bg-primary text-on-primary rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                            أضف للسلة
-                        </button>
-</div>
-<!-- Product 4 -->
-<div class="group">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-6 aspect-[4/5] relative">
-<img class="w-full h-full object-cover" data-alt="Handcrafted crochet hat and scarf set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ_N0NO8D8GKxP01aPr5uyI8pn2o5VcDjHkyz89kmxAmNhFME_KacgNYgP1PVaAJkWz6HHfpnE5GBhyOAsNvgabSU4ITiZkqI0jprnWmrYPsdub6CmKz8h65PeJASqjyHA6gmqhNE3Nb529MlAVtVuo3halIHKwmNYy5yEKcsYDLTYOdt4T9VlM7Rs32R6coV88yWzKBhGufg50pb5JDTGjPXoBzIUPhl1g-NbnDLifmAUpiVH34lAZ9YFJeEdhe00iTKS2UAAYZCD"/>
-<div class="absolute top-4 right-4 flex flex-col gap-2">
-<button class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-<h4 class="font-headline text-lg text-on-surface">طقم قبعة صوفية</h4>
-<p class="text-secondary font-medium mb-4">١٢٠ ر.س</p>
-<button class="w-full py-3 bg-primary text-on-primary rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                            أضف للسلة
-                        </button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#f2ede9] dark:bg-[#141614] full-width rounded-t-[3rem] mt-20">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-7xl mx-auto">
-<div class="text-center md:text-right">
-<h3 class="text-xl font-serif text-[#7e572e] dark:text-[#b5b1ad] mb-4">المنسوج الحرفي</h3>
-<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#34322f] dark:text-[#ece7e3] max-w-xs opacity-70">
-                    نهتم بأدق التفاصيل لنقدم لكم قطعاً يدوية تلامس القلب وتزين حياتكم بالدفء.
-                </p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors font-['Plus_Jakarta_Sans'] text-sm" href="#">تواصل معنا</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors font-['Plus_Jakarta_Sans'] text-sm" href="#">الشروط والأحكام</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors font-['Plus_Jakarta_Sans'] text-sm" href="#">سياسة الاسترجاع</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors font-['Plus_Jakarta_Sans'] text-sm" href="#">الأسئلة الشائعة</a>
-</div>
-<div class="flex gap-4">
-<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant text-primary hover:bg-primary hover:text-white transition-all" href="#">
-<span class="material-symbols-outlined text-xl">camera</span>
-</a>
-<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-variant text-primary hover:bg-primary hover:text-white transition-all" href="#">
-<span class="material-symbols-outlined text-xl">share</span>
-</a>
-</div>
-</div>
-<div class="w-full border-t border-outline-variant/10 py-8 text-center">
-<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#34322f] dark:text-[#ece7e3] opacity-60">
-                © ٢٠٢٤ المنسوج الحرفي. جميع الحقوق محفوظة.
-            </p>
-</div>
-</footer>
-</body></html>
-
-<!-- الصفحة الرئيسية -->
-<!DOCTYPE html>
-
-<html dir="rtl" lang="ar"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-fixed": "#c5eccc",
-              "tertiary": "#7f535c",
-              "outline-variant": "#b5b1ad",
-              "tertiary-dim": "#714750",
-              "secondary": "#7e572e",
-              "tertiary-fixed-dim": "#edb5c0",
-              "secondary-container": "#ffdcbd",
-              "secondary-fixed": "#ffdcbd",
-              "error-dim": "#67040d",
-              "inverse-on-surface": "#a09c9a",
-              "on-secondary": "#fff7f4",
-              "surface-dim": "#ded9d5",
-              "on-secondary-container": "#6f4a22",
-              "surface-container-lowest": "#ffffff",
-              "outline": "#7d7a76",
-              "inverse-primary": "#d3fbda",
-              "on-tertiary-container": "#643c45",
-              "surface-container-low": "#f8f3ef",
-              "on-primary": "#e8ffea",
-              "on-error": "#fff7f6",
-              "background": "#fdf8f5",
-              "tertiary-fixed": "#fcc3ce",
-              "surface": "#fdf8f5",
-              "primary-container": "#c5eccc",
-              "surface-bright": "#fdf8f5",
-              "on-tertiary-fixed-variant": "#6e454e",
-              "surface-variant": "#e7e2dd",
-              "surface-container-highest": "#e7e2dd",
-              "secondary-dim": "#704b23",
-              "on-primary-container": "#375941",
-              "error-container": "#fa746f",
-              "primary-fixed-dim": "#b7debe",
-              "on-primary-fixed-variant": "#41634a",
-              "on-surface-variant": "#615f5b",
-              "error": "#a83836",
-              "surface-tint": "#44674d",
-              "secondary-fixed-dim": "#ffca98",
-              "inverse-surface": "#0f0e0d",
-              "on-secondary-fixed-variant": "#7a532a",
-              "primary-dim": "#385b42",
-              "tertiary-container": "#fcc3ce",
-              "on-surface": "#34322f",
-              "on-error-container": "#6e0a12",
-              "surface-container-high": "#ece7e3",
-              "on-tertiary": "#fff7f7",
-              "on-primary-fixed": "#25462f",
-              "on-secondary-fixed": "#5a3811",
-              "on-background": "#34322f",
-              "primary": "#44674d",
-              "on-tertiary-fixed": "#4e2932",
-              "surface-container": "#f2ede9"
-            },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Plus Jakarta Sans"],
-              "label": ["Plus Jakarta Sans"]
-            },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            boxShadow: {
+              soft: '0 18px 40px rgba(111, 78, 55, 0.12)'
+            }
+          }
         }
-        .grainy-bg {
-            background-image: linear-gradient(45deg, #44674d08 25%, transparent 25%), linear-gradient(-45deg, #44674d08 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #44674d08 75%), linear-gradient(-45deg, transparent 75%, #44674d08 75%);
-            background-size: 4px 4px;
-        }
-    </style>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation Shell -->
-<nav class="bg-[#fdf8f5]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-md font-['Noto_Serif'] leading-relaxed text-[#34322f] dark:text-[#ece7e3] docked full-width top-0 sticky z-50">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<div class="flex items-center gap-12">
-<span class="text-2xl font-bold text-[#44674d] dark:text-[#c5eccc]">متجر الكروشیه</span>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الرئيسية</a>
-<a class="text-[#44674d] dark:text-[#c5eccc] font-bold border-b-2 border-[#44674d] pb-1" href="#">الأميغورومي</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الإكسسوارات</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الملابس</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">ديكور المنزل</a>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:scale-95 duration-200 ease-in-out transition-all">طلب خاص</button>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-2xl cursor-pointer hover:bg-[#ece7e3]/50 p-2 rounded-full transition-all">shopping_basket</span>
-<span class="material-symbols-outlined text-2xl cursor-pointer hover:bg-[#ece7e3]/50 p-2 rounded-full transition-all">person</span>
-</div>
-</div>
-</div>
-</nav>
-<main class="max-w-7xl mx-auto px-8 py-12">
-<!-- Hero / Section Title -->
-<header class="mb-20 text-center relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">toys</span>
-</div>
-<h1 class="font-headline text-5xl md:text-7xl mb-6 text-on-surface">عالم الأميغورومي</h1>
-<p class="text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
-                دمى محاكة يدوياً بكل حب، لتكون رفيقاً مثالياً لأطفالكم أو قطعة فنية تزين زواياكم الخاصة. كل غرزة تحكي قصة من الإبداع.
-            </p>
-</header>
-<!-- Category Grid (Asymmetric) -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-<!-- Sidebar Filters / Featured -->
-<div class="md:col-span-3 space-y-8 sticky top-28">
-<div class="bg-surface-container p-8 rounded-xl">
-<h3 class="font-headline text-xl mb-6 text-primary border-b border-outline-variant/20 pb-4">تصفية حسب</h3>
-<div class="space-y-4">
-<label class="flex items-center gap-3 cursor-pointer group">
-<div class="w-5 h-5 rounded border-2 border-primary-dim group-hover:bg-primary-container transition-colors"></div>
-<span class="text-on-surface">متوفر حالياً</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<div class="w-5 h-5 rounded border-2 border-outline-variant group-hover:bg-primary-container transition-colors"></div>
-<span class="text-on-surface">متاح للطلب</span>
-</label>
-</div>
-<div class="mt-10">
-<h3 class="font-headline text-xl mb-6 text-primary border-b border-outline-variant/20 pb-4">الفئات</h3>
-<div class="flex flex-wrap gap-2">
-<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-sm font-medium">حيوانات</span>
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium">شخصيات كرتونية</span>
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium">نباتات</span>
-<span class="bg-surface-variant text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium">خيال</span>
-</div>
-</div>
-</div>
-<div class="bg-primary text-on-primary p-8 rounded-xl overflow-hidden relative">
-<div class="relative z-10">
-<h4 class="font-headline text-2xl mb-2">هدية خاصة؟</h4>
-<p class="text-sm opacity-90 mb-4">يمكننا تنفيذ أي تصميم يخطر ببالك بجودة عالية.</p>
-<button class="bg-surface text-primary px-5 py-2 rounded-full text-sm font-bold">تواصل معنا</button>
-</div>
-<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-7xl opacity-20 rotate-12">auto_awesome</span>
-</div>
-</div>
-<!-- Product Grid -->
-<div class="md:col-span-9">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
-<!-- Product 1 -->
-<div class="group">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Handcrafted crochet elephant plush toy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp323NEXw9i8YWtVvdA300R2eOJ-788w8ZiaJe10rxzDvU1kX96oTPomw2GFfHfiRT8I-l6KXxXEeIx6vQawtASGBSh-c_Ep8sgIt7EPxP1HAo-BqO6Sd4q4vjE2m2wd-0xeinzUpEw8lIxKAyHEI2v5I1n0xdetICj3VIW7ICGD2_WlmCgEDOmS-nZTlzjCP5fkrcevhbjPgnUdyrem-Tj-aqWW8mhm75gQE5N3uNLAiWlPpWBTso_-YtRVQlYSAj4bZtpxaNrcuC"/>
-<div class="absolute top-4 right-4">
-<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold shadow-lg">متوفر حالياً</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">أضف للسلة</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">الفيل "بينو" الصغير</h3>
-<p class="text-secondary text-sm mb-2">محاك من قطن عضوي 100%</p>
-<span class="text-primary font-bold">150 ر.س</span>
-</div>
-<!-- Product 2 -->
-<div class="group mt-8 lg:mt-0">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Crochet baby bunny rabbit doll" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnWOG6svq72Eg1Riyv9YXCgAPMFaT8U34_3Ben88g_LW0Ye4jOFe87u2LneZuw_yczttyNkFBGamoIrPDOH7wyM1aduivKR4bnND8FSgVKODilQjPrnyzvRBWJu6YOn3X_65UDwhFSkfgEOFZghTP7lZHR_woFsdfSumx2u5h_3-drRJJReZz9Wmoe3ljNFtDBuodX55blNQXthvbX5VS-FbzVEkVTCZLHO2xS71WkDxNR702KZmlXpIoKJe3907K8Cl_gkfsqIlvW"/>
-<div class="absolute top-4 right-4">
-<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold shadow-lg">متاح للطلب</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">اطلب الآن</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">الأرنب الوردي اللطيف</h3>
-<p class="text-secondary text-sm mb-2">مثالي لغرف المواليد</p>
-<span class="text-primary font-bold">185 ر.س</span>
-</div>
-<!-- Product 3 -->
-<div class="group">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Set of small crochet dinosaur amigurumi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGSOzy7kQmR_f2W5qnws1usyN4OvDczY8hDWEcZ5tDLbCbdbdpqQxEFTVDUoMkiV6OhyVfN5kOTwZJB5sVT8NH6Kx5MWH92M-tgYWSP0kAXVKGhwIl0C6O6GBvulNJFod8VfQ9xOEuK1Ke0xTSynNuDQ9O6yQLCosjybM4eIoshDke3OwBPCdD1bDeZHfJqaOond2OJjV8pPA2IFPFVQEujb7iojNbDCnLM8P3CB44ZYoN1f8pbu_pTn9pIBJOLY_ab7kUeIuQ5iMS"/>
-<div class="absolute top-4 right-4">
-<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold shadow-lg">متوفر حالياً</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">أضف للسلة</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">ديناصور "ركسي" الأخضر</h3>
-<p class="text-secondary text-sm mb-2">رفيق المغامرات للأطفال</p>
-<span class="text-primary font-bold">120 ر.س</span>
-</div>
-<!-- Product 4 -->
-<div class="group">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Crochet flower pot sunflower desk decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRxw4o_bAvQCDsxW9IshRad3o0TDWOlBF7WEGBS_C3_zmyhLd9t72cTqFLw9mVLCoI3bbT1QTx_WChwTXs2E9yu8qKb7C8s4bnkBuUR2KL6d8N3pw4M7tKXtEhlg-XTit1so13su4eI-MZNgmx0JLlzx97lSmxHMvIA6fwK6DwezDLcxJ2ce7MYC7FH-q68LEwazwSJGr1ThlRyxPPjhJJv3DZwo140Zu-3UMGxBUmheWKUigpYo2ZQ8WUSoCXeQelbPG9Jm4pvMXc"/>
-<div class="absolute top-4 right-4">
-<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold shadow-lg">متاح للطلب</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">اطلب الآن</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">نبات تباع الشمس الصغير</h3>
-<p class="text-secondary text-sm mb-2">ديكور مكتبي أنيق ولا يذبل</p>
-<span class="text-primary font-bold">75 ر.س</span>
-</div>
-<!-- Product 5 -->
-<div class="group mt-12">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Handmade crochet bear plush" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAENijMWr0zUfHrghuB7l6hm1fqBgFp9c33u3nPYt6EKCGh_gdCZhyTWaCMA-gA5E8RY9BgmZfycSz1XhkL3at3tE5_M4Jf1SQzqOTpQusHxZWz2ppgqvF_RLgr7qeoOl79r5v93CHSdwz32uOJ7VBEXLs6Q2ZNHSZ-zZ8iyVc8Xd8RZvbC_wDsf6QFaexNioHT7Sj4ELoVo0vle35-c_U7wQy0lHJ0Bdj20nOz8JAgMr25ROEeEwuLXurmpvsTE6J_jPOn3wKmsKgN"/>
-<div class="absolute top-4 right-4">
-<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold shadow-lg">متوفر حالياً</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">أضف للسلة</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">الدب البني الكلاسيكي</h3>
-<p class="text-secondary text-sm mb-2">حجم كبير وملمس ناعم جداً</p>
-<span class="text-primary font-bold">210 ر.س</span>
-</div>
-<!-- Product 6 -->
-<div class="group">
-<div class="relative mb-6 rounded-xl bg-surface-container-low overflow-hidden transition-all duration-500 group-hover:-translate-y-2">
-<img class="w-full h-[320px] object-cover mix-blend-multiply opacity-90" data-alt="Cute crochet fox amigurumi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2ZVMpKkdP6EBgEL6U3_wRUuLeZd_jYkZ8eAoREKjkptBHXG-ElT9AWRCNjK3rR6S4DrRShjOZeg-tJiY0NrDc-Gs1Q6iD-AP1ig_C9DnJFitWnzaekktErhX4OSVaEdut6gUrxMKo6eTipDzaWf4WfjYOJ-b3lBFG8_MKy3IzZKgVKa-lW4PapA3wd-FkOZ53PygxC3oP2oTMFrEBZ8jFadqWnpnr3cGXvx5OByfZzMK5yPUq7DHvCOjqRxQ6yxl7gl0sgh60URwq"/>
-<div class="absolute top-4 right-4">
-<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold shadow-lg">متاح للطلب</span>
-</div>
-<button class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md py-3 rounded-full text-primary font-bold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">اطلب الآن</button>
-</div>
-<h3 class="font-headline text-xl text-on-surface mb-1">الثعلب "فينك" الذكي</h3>
-<p class="text-secondary text-sm mb-2">ألوان زاهية وتفاصيل دقيقة</p>
-<span class="text-primary font-bold">165 ر.س</span>
-</div>
-</div>
-<!-- Pagination / More -->
-<div class="mt-20 flex justify-center">
-<button class="bg-secondary-container text-on-secondary-container px-12 py-4 rounded-full font-bold hover:bg-secondary hover:text-on-secondary transition-all duration-300">عرض المزيد من المنتجات</button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#f2ede9] dark:bg-[#141614] full-width rounded-t-[3rem] mt-20">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm text-[#34322f] dark:text-[#ece7e3]">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<span class="text-xl font-serif text-[#7e572e] dark:text-[#b5b1ad]">المنسوج الحرفي</span>
-<p class="max-w-xs text-center md:text-right opacity-80">نؤمن أن الجمال يكمن في التفاصيل الصغيرة المصنوعة يدوياً.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">تواصل معنا</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">الشروط والأحكام</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">سياسة الاسترجاع</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">الأسئلة الشائعة</a>
-</div>
-<div class="text-[#7e572e] opacity-60">
-                © ٢٠٢٤ المنسوج الحرفي. جميع الحقوق محفوظة.
-            </div>
-</div>
-</footer>
-</body></html>
-
-<!-- قسم الأميغورومي -->
-<!DOCTYPE html>
-
-<html class="light" dir="rtl" lang="ar"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-fixed": "#c5eccc",
-              "tertiary": "#7f535c",
-              "outline-variant": "#b5b1ad",
-              "tertiary-dim": "#714750",
-              "secondary": "#7e572e",
-              "tertiary-fixed-dim": "#edb5c0",
-              "secondary-container": "#ffdcbd",
-              "secondary-fixed": "#ffdcbd",
-              "error-dim": "#67040d",
-              "inverse-on-surface": "#a09c9a",
-              "on-secondary": "#fff7f4",
-              "surface-dim": "#ded9d5",
-              "on-secondary-container": "#6f4a22",
-              "surface-container-lowest": "#ffffff",
-              "outline": "#7d7a76",
-              "inverse-primary": "#d3fbda",
-              "on-tertiary-container": "#643c45",
-              "surface-container-low": "#f8f3ef",
-              "on-primary": "#e8ffea",
-              "on-error": "#fff7f6",
-              "background": "#fdf8f5",
-              "tertiary-fixed": "#fcc3ce",
-              "surface": "#fdf8f5",
-              "primary-container": "#c5eccc",
-              "surface-bright": "#fdf8f5",
-              "on-tertiary-fixed-variant": "#6e454e",
-              "surface-variant": "#e7e2dd",
-              "surface-container-highest": "#e7e2dd",
-              "secondary-dim": "#704b23",
-              "on-primary-container": "#375941",
-              "error-container": "#fa746f",
-              "primary-fixed-dim": "#b7debe",
-              "on-primary-fixed-variant": "#41634a",
-              "on-surface-variant": "#615f5b",
-              "error": "#a83836",
-              "surface-tint": "#44674d",
-              "secondary-fixed-dim": "#ffca98",
-              "inverse-surface": "#0f0e0d",
-              "on-secondary-fixed-variant": "#7a532a",
-              "primary-dim": "#385b42",
-              "tertiary-container": "#fcc3ce",
-              "on-surface": "#34322f",
-              "on-error-container": "#6e0a12",
-              "surface-container-high": "#ece7e3",
-              "on-tertiary": "#fff7f7",
-              "on-primary-fixed": "#25462f",
-              "on-secondary-fixed": "#5a3811",
-              "on-background": "#34322f",
-              "primary": "#44674d",
-              "on-tertiary-fixed": "#4e2932",
-              "surface-container": "#f2ede9"
-            },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Plus Jakarta Sans"],
-              "label": ["Plus Jakarta Sans"]
-            },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
+      };
     </script>
-<style>
-      body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #fdf8f5;
-        color: #34322f;
-      }
-      h1, h2, h3, .font-serif {
-        font-family: 'Noto Serif', serif;
-      }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-nav {
-        background: rgba(253, 248, 245, 0.8);
-        backdrop-filter: blur(12px);
-      }
-    </style>
-</head>
-<body class="bg-background text-on-background antialiased overflow-x-hidden">
-<!-- Top Navigation Bar -->
-<nav class="docked full-width top-0 sticky z-50 bg-[#fdf8f5]/80 dark:bg-[#1a1c1a]/80 backdrop-blur-md">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<div class="flex items-center gap-8">
-<span class="text-2xl font-bold text-[#44674d] dark:text-[#c5eccc]">متجر الكروشيه</span>
-<div class="hidden md:flex gap-6 items-center font-['Noto_Serif'] leading-relaxed text-[#34322f] dark:text-[#ece7e3]">
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الرئيسية</a>
-<a class="text-[#44674d] dark:text-[#c5eccc] font-bold border-b-2 border-[#44674d] pb-1" href="#">الأميغورومي</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الإكسسوارات</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">الملابس</a>
-<a class="text-[#7e572e] dark:text-[#b5b1ad] hover:text-[#44674d] transition-all duration-300" href="#">ديكور المنزل</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="bg-[#44674d] text-on-primary px-6 py-2 rounded-full font-medium hover:scale-95 duration-200 transition-all">طلب خاص</button>
-<div class="flex gap-2">
-<button class="p-2 hover:bg-[#ece7e3]/50 rounded-full transition-all duration-300">
-<span class="material-symbols-outlined text-[#44674d]">shopping_basket</span>
-</button>
-<button class="p-2 hover:bg-[#ece7e3]/50 rounded-full transition-all duration-300">
-<span class="material-symbols-outlined text-[#44674d]">person</span>
-</button>
-</div>
-</div>
-</div>
-</nav>
-<main class="max-w-7xl mx-auto px-6 lg:px-12 py-12">
-<!-- Breadcrumbs -->
-<nav class="flex text-sm mb-8 text-outline gap-2">
-<a class="hover:text-primary transition-colors" href="#">الرئيسية</a>
-<span>/</span>
-<a class="hover:text-primary transition-colors" href="#">الأميغورومي</a>
-<span>/</span>
-<span class="text-on-surface font-semibold">دمية الأرنب الصوفية</span>
-</nav>
-<!-- Product Hero Section (Asymmetric Layout) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-<!-- Image Showcase (Asymmetric Design) -->
-<div class="lg:col-span-7 relative">
-<div class="relative z-10 rounded-xl overflow-hidden bg-surface-container-low aspect-[4/5] shadow-sm">
-<img alt="Handmade Crochet Rabbit Doll" class="w-full h-full object-cover" data-alt="Handmade beige crochet rabbit doll with pink scarf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCapwBmSxUvqXnJ1ztFbD6pU2WBvqzw2V-KFjCw3G4t1j1sVytWv9GnWDBdhF5zC2LXOUNx21pkNwKMWGTRW0NdGucY_hwVedoPMoZZH497Csmof-KZXjJZWeE8O_jYI_z_1ARFqo56L1vECybh-1t53eOPHJyijqDhuFVtWM4A-2ItoXMxiRlg_WICw7rmmx4--vNGpwTJ-Ur8fE0FZj1g10HN1-75CNpm1k3W8tIBcH2x_J4nYNn1tnLgjBLNQ7Mi5MY9nlCqkiWo"/>
-</div>
-<!-- Decorative Swatch Images (Offset) -->
-<div class="absolute -bottom-6 -right-6 w-48 h-48 rounded-lg overflow-hidden border-8 border-background shadow-lg z-20 hidden md:block">
-<img alt="Crochet Detail" class="w-full h-full object-cover" data-alt="Close up texture of crochet wool stitches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWD6RRrn0rfI7GqKsvfxBlUojkVPjtTrFplUXwoeFNp43Mtrmbbag8tozMlI5p33J4z1TXa0vwpJmuH29SNZA_lty8Lup9GkCqB5pLj--LAHEfaE6hVaKaYnKOVbE8w3VX65Kdu-xWLAqdJffb9_gfYLeUWtCCaJobhXu3TSBBc-kz0WrmdaegTFBILQyfiMwcZ2Ig3Rih_SAOukHeSvBN0_I88ge0buqSl4PUaZIB2HKAXHZaH0b9CWel_G5btiIv7jNILQkdxaNa"/>
-</div>
-<!-- Floating Badge -->
-<div class="absolute top-6 left-6 z-20">
-<span class="bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-full text-sm font-bold shadow-sm">صناعة يدوية بكل حب</span>
-</div>
-</div>
-<!-- Product Details -->
-<div class="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-28">
-<div>
-<h1 class="text-5xl font-headline font-bold text-on-surface leading-tight mb-2">دمية الأرنب "نوا" الصوفية</h1>
-<div class="flex items-center gap-4 mb-4">
-<span class="text-3xl font-bold text-primary">١٨٥ ر.س</span>
-<div class="h-4 w-[1px] bg-outline-variant/30"></div>
-<div class="flex items-center gap-1 text-secondary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined">star_half</span>
-<span class="text-sm text-outline mr-1">(٢٤ تقييم)</span>
-</div>
-</div>
-<p class="text-lg leading-relaxed text-on-surface-variant">
-                        صُنعت هذه الدمية يدوياً باستخدام أجود أنواع القطن الطبيعي. تتميز بملمس ناعم جداً وتفاصيل دقيقة تجعلها الرفيق المثالي لطفلك أو قطعة ديكور دافئة في منزلك.
-                    </p>
-</div>
-<!-- Customization Options -->
-<div class="space-y-6">
-<div>
-<span class="text-title-lg font-bold text-secondary block mb-3">اختر اللون:</span>
-<div class="flex gap-3">
-<button class="w-10 h-10 rounded-full bg-[#f5e6d3] border-4 border-white ring-2 ring-primary ring-offset-2"></button>
-<button class="w-10 h-10 rounded-full bg-[#d3e5f5] border-4 border-white"></button>
-<button class="w-10 h-10 rounded-full bg-[#f5d3db] border-4 border-white"></button>
-<button class="w-10 h-10 rounded-full bg-[#e1f5d3] border-4 border-white"></button>
-</div>
-</div>
-<div>
-<span class="text-title-lg font-bold text-secondary block mb-3">المقاس:</span>
-<div class="flex gap-4">
-<label class="flex-1">
-<input class="hidden peer" name="size" type="radio"/>
-<div class="p-3 text-center rounded-xl border-2 border-transparent bg-surface-container-high peer-checked:border-primary peer-checked:bg-primary-container/20 cursor-pointer transition-all">صغير (١٥سم)</div>
-</label>
-<label class="flex-1">
-<input checked="" class="hidden peer" name="size" type="radio"/>
-<div class="p-3 text-center rounded-xl border-2 border-transparent bg-surface-container-high peer-checked:border-primary peer-checked:bg-primary-container/20 cursor-pointer transition-all">وسط (٢٥سم)</div>
-</label>
-</div>
-</div>
-</div>
-<!-- Action Buttons -->
-<div class="flex flex-col gap-4 mt-4">
-<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 shadow-lg hover:brightness-110 transition-all">
-<span class="material-symbols-outlined">shopping_basket</span>
-                        أضف للسلة
-                    </button>
-<button class="w-full border-2 border-primary text-primary py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 hover:bg-primary/5 transition-all">
-<span class="material-symbols-outlined">edit_note</span>
-                        طلب مخصص
-                    </button>
-</div>
-<!-- Product Perks -->
-<div class="grid grid-cols-2 gap-4 pt-4">
-<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container">
-<span class="material-symbols-outlined text-secondary">local_shipping</span>
-<span class="text-xs font-semibold">شحن سريع خلال ٣ أيام</span>
-</div>
-<div class="flex items-center gap-3 p-4 rounded-xl bg-surface-container">
-<span class="material-symbols-outlined text-secondary">verified</span>
-<span class="text-xs font-semibold">١٠٠٪ عمل يدوي</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Details Tabs / Bento Info -->
-<div class="mt-28 grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="md:col-span-2 p-8 rounded-xl bg-surface-container-low border-b-4 border-primary/10">
-<h3 class="text-2xl font-headline font-bold mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">description</span>
-                    تفاصيل القصة والمواد
-                </h3>
-<div class="space-y-4 leading-relaxed text-on-surface-variant">
-<p>كل قطعة ننتجها تحكي قصة من الصبر والشغف. تم غزل هذا الأرنب باستخدام خيوط قطنية عضوية معتمدة من GOTS، مما يجعلها آمنة تماماً للأطفال الرضع ذوي البشرة الحساسة.</p>
-<ul class="list-disc pr-6 space-y-2">
-<li>خيوط قطن تركية عالية الجودة.</li>
-<li>حشوة بوليستر ناعمة مضادة للحساسية.</li>
-<li>عيون مثبتة بأمان (Safety Eyes) ضد السحب.</li>
-<li>يمكن غسله يدوياً بالماء البارد.</li>
-</ul>
-</div>
-</div>
-<div class="p-8 rounded-xl bg-secondary-container/30 flex flex-col justify-center items-center text-center">
-<span class="material-symbols-outlined text-secondary text-5xl mb-4">redeem</span>
-<h4 class="text-xl font-bold text-on-secondary-container mb-2">هدية مميزة؟</h4>
-<p class="text-sm text-on-secondary-container/80 mb-6">نقدم خدمة التغليف الورقي الراقي مع بطاقة إهداء مكتوبة بخط اليد مجاناً.</p>
-<button class="text-secondary font-bold underline">أضف خيار الهدية</button>
-</div>
-</div>
-<!-- Suggestions Section -->
-<div class="mt-28">
-<div class="flex justify-between items-end mb-12">
-<div>
-<h2 class="text-4xl font-headline font-bold text-on-surface">قد يعجبك أيضاً</h2>
-<p class="text-secondary mt-2">مختارات من نفس المجموعة الحرفية</p>
-</div>
-<button class="text-primary font-bold flex items-center gap-2">عرض الكل <span class="material-symbols-outlined">arrow_back</span></button>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Suggestion Card 1 -->
-<div class="group cursor-pointer">
-<div class="rounded-xl overflow-hidden aspect-square bg-surface-container-low mb-4 relative">
-<img alt="Crochet Elephant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Small gray crochet elephant with blue ears" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOqiPj04n-hPccIZf92niH_ecEmgujmC7KXHvfxsMR9yZ-Y4MHpf3fYCA75Q4VE__xrIAQSlKwp_sJ6GmiSrDyW6rOZlYz_YyQm8LToFNvqBBvkVkOKJyR00PO4D50JWB9F-LtbJtysHa4NTcK0lMPJJfrxuC2Z3It5vgUWjlLEnLhvDc4mPLQIh3BLzVQEx5p_2qv76vlJyNxvG-MQoZbUMWB4wkKUZCYVTtvGO-gptQpvDrWpruLq4--VII2_aV81uBnzJYIhZqt"/>
-</div>
-<h3 class="font-bold text-lg mb-1">الفيل "بينو" الصغير</h3>
-<p class="text-primary font-bold">١٤٠ ر.س</p>
-</div>
-<!-- Suggestion Card 2 -->
-<div class="group cursor-pointer">
-<div class="rounded-xl overflow-hidden aspect-square bg-surface-container-low mb-4 relative">
-<img alt="Crochet Blanket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Soft colorful baby crochet blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi8iT2NeHHoMTKREAKcLXglm_VIEukQq3YyWEldAbmyHLuK7JC7rnL0a-35iNni9eVb__fq_nIqvjB1kn7-A3SDPcwK3mywITUuEahVlDliLtL-Zy5MAwjzqJ_x0jkCKdZWtRq4EM7K-bNZbzYCayZ5ZkIVrbgUzQLRv74RfOZpPz1ckvGHGVNxoA6BqfpEtu3mf25Mr5WIFPAudIT18i6SgQyeYEL0ocjd62sZzSLRDUCK9M7JdyWMxw2al-kLWOrZ5G_14OavxNi"/>
-</div>
-<h3 class="font-bold text-lg mb-1">بطانية "الألوان الدافئة"</h3>
-<p class="text-primary font-bold">٣٢٠ ر.س</p>
-</div>
-<!-- Suggestion Card 3 -->
-<div class="group cursor-pointer">
-<div class="rounded-xl overflow-hidden aspect-square bg-surface-container-low mb-4 relative">
-<img alt="Crochet Bear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic brown crochet teddy bear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtvfBZBJf9VGFoLUOE_F18cCiuVg2Jv4I7IzjFjhJ9btGASIY-MLXE44MOjvWiDqJVxl0hIhAT0bDcNaAaX3gOF2HBWV6TD3QOvskYRXC47oSeM76TGxDLqE60b0zgA89YTcbEbyhUWLNLiQlmBabEiPkdtHKb_3cTJgklLoC64bJlx_4vGYnpJjDdvLweBbsGcuWsOQ3INwsJC44PScO9q7QvR_xstJNpdzRY0XtzV5lgl8CaCoCmeIp4Xd2oOots_HydgfLvlQzD"/>
-</div>
-<h3 class="font-bold text-lg mb-1">الدب البني الكلاسيكي</h3>
-<p class="text-primary font-bold shadow-tertiary">١٦٠ ر.س</p>
-</div>
-<!-- Suggestion Card 4 -->
-<div class="group cursor-pointer">
-<div class="rounded-xl overflow-hidden aspect-square bg-surface-container-low mb-4 relative">
-<img alt="Crochet Rattles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Set of handmade crochet wooden baby rattles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8JrNG9sRaQKzj23R_BuDB43GH5XgWGe3RAY43s-ivHMonHU4wE0VHw0Zy4bSbzstv-qYsUu1et6scrH4-TOHxdgs96s-05LbJuAKdnvQGFz-bYVoHU1qKqiEfTe4lPZWwfUL_LNh1ESRA-RB_7Btxp6mYvBC7UPXkKUu3hnmZwdmAgpMhL4wAuzA3Ukt8NXLfP_Q4iWH_36BIcuwqpo3VtNdN6Kh8Ojfp7swUW6DOweLTtWY3maD7WFcYaGgdU4kmgIm5Le3izXRR"/>
-</div>
-<h3 class="font-bold text-lg mb-1">طقم خشخيشات الخشب</h3>
-<p class="text-primary font-bold">٩٥ ر.س</p>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer Section -->
-<footer class="full-width rounded-t-[3rem] mt-20 bg-[#f2ede9] dark:bg-[#141614]">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-7xl mx-auto">
-<div class="text-center md:text-right">
-<span class="text-xl font-serif text-[#7e572e] dark:text-[#b5b1ad]">المنسج الحرفي</span>
-<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#34322f] dark:text-[#ece7e3] mt-2 max-w-xs">نحن نعيد تعريف مفهوم الهدايا يدوية الصنع بأعلى معايير الجودة والأناقة.</p>
-</div>
-<div class="flex gap-8 font-['Plus_Jakarta_Sans'] text-sm text-[#34322f] dark:text-[#ece7e3]">
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">تواصل معنا</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">الشروط والأحكام</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">سياسة الاسترجاع</a>
-<a class="text-[#7e572e] opacity-80 hover:text-[#44674d] transition-colors" href="#">الأسئلة الشائعة</a>
-</div>
-<div class="text-[#7e572e] opacity-60 text-sm">
-                © ٢٠٢٤ المنسج الحرفي. جميع الحقوق محفوظة.
+  </head>
+  <body class="bg-brand-cream font-cairo text-brand-dark">
+    <header class="bg-gradient-to-l from-brand-sand via-brand-cream to-white">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+        <a href="#home" class="text-2xl font-extrabold text-brand-mocha">دفء الغرز</a>
+        <div class="hidden gap-6 text-sm font-bold text-brand-mocha md:flex">
+          <a href="#categories" class="hover:text-brand-rose">الأقسام</a>
+          <a href="#products" class="hover:text-brand-rose">المتوفر الآن</a>
+          <a href="#custom" class="hover:text-brand-rose">طلب خاص</a>
+          <a href="#contact" class="hover:text-brand-rose">تواصل</a>
+        </div>
+        <a
+          href="#custom"
+          class="rounded-full bg-brand-mocha px-5 py-2.5 text-sm font-bold text-white transition hover:bg-brand-rose"
+          >اطلب الآن</a
+        >
+      </nav>
+
+      <section
+        id="home"
+        class="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:px-8 lg:pb-24 lg:pt-12"
+      >
+        <div class="flex flex-col justify-center">
+          <span class="mb-4 inline-flex w-fit rounded-full bg-white px-4 py-2 text-sm font-bold text-brand-olive shadow-soft"
+            >منتجات كروشيه يدوية بتفاصيل مميزة</span
+          >
+          <h1 class="mb-6 text-4xl font-extrabold leading-tight text-brand-dark md:text-6xl">
+            موقع أنيق لمشروعك الخاص في <span class="text-brand-rose">الكروشيه</span>
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-brand-mocha/90">
+            اعرضي لزبائنك أقسام الأميغورومي، الإكسسوارات، الملابس، وديكور المنزل. عند دخول أي قسم سيجد الزبون ما هو
+            متوفر الآن، وما يمكن تنفيذه حسب الطلب، مع نموذج طلب خاص لإرسال الاسم واللقب والهاتف وصورة التصميم المطلوب.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#categories" class="rounded-full bg-brand-rose px-7 py-3 text-sm font-bold text-white shadow-soft hover:bg-brand-mocha">استعراض الأقسام</a>
+            <a href="#custom" class="rounded-full border border-brand-mocha px-7 py-3 text-sm font-bold text-brand-mocha hover:bg-white">نموذج الطلب الخاص</a>
+          </div>
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-3xl bg-white p-5 shadow-soft">
+              <p class="text-3xl font-extrabold text-brand-rose">4</p>
+              <p class="text-sm text-brand-mocha">أقسام رئيسية واضحة</p>
             </div>
-</div>
-</footer>
-</body></html>
+            <div class="rounded-3xl bg-white p-5 shadow-soft">
+              <p class="text-3xl font-extrabold text-brand-olive">12+</p>
+              <p class="text-sm text-brand-mocha">منتجات جاهزة للعرض</p>
+            </div>
+            <div class="rounded-3xl bg-white p-5 shadow-soft">
+              <p class="text-3xl font-extrabold text-brand-mocha">100%</p>
+              <p class="text-sm text-brand-mocha">إمكانية تخصيص الطلبات</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="rounded-[2rem] bg-white p-4 shadow-soft sm:translate-y-8">
+            <img class="mb-4 h-72 w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="منتجات كروشيه يدوية" />
+            <h2 class="text-xl font-bold text-brand-mocha">تصاميم يدوية تبرز هوية مشروعك</h2>
+          </article>
+          <article class="rounded-[2rem] bg-brand-mocha p-4 text-white shadow-soft">
+            <img class="mb-4 h-72 w-full rounded-[1.5rem] object-cover" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80" alt="أدوات كروشيه وخيوط" />
+            <h2 class="text-xl font-bold">نموذج طلب خاص للزبائن الذين يريدون تصميماً مخصصاً</h2>
+          </article>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="categories" class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="mb-10 text-center">
+          <p class="mb-3 text-sm font-bold text-brand-rose">البداية كما طلبت</p>
+          <h2 class="mb-4 text-3xl font-extrabold md:text-4xl">الأقسام الرئيسية في واجهة الموقع</h2>
+          <p class="mx-auto max-w-3xl text-brand-mocha/90">
+            يبدأ الموقع بأربع فئات أساسية: أميغورومي، إكسسوارات، ملابس، ديكور للمنزل. يمكن للزبون الضغط على أي قسم
+            لرؤية المتوفر حالياً وما يمكن تصنيعه عند الطلب.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft ring-2 ring-brand-rose" data-category="amigurumi">
+            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">أميغورومي</span>
+            <h3 class="mb-3 text-2xl font-extrabold">دمى لطيفة وهدايا شخصية</h3>
+            <p class="text-sm leading-7 text-brand-mocha/80">دببة، أرانب، شخصيات أطفال، مجسمات مخصصة للأسماء والمناسبات.</p>
+          </button>
+          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="accessories">
+            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">إكسسوارات</span>
+            <h3 class="mb-3 text-2xl font-extrabold">لمسات يومية أنيقة</h3>
+            <p class="text-sm leading-7 text-brand-mocha/80">حقائب، محافظ، ربطات شعر، أغطية هواتف، هدايا بسيطة وجميلة.</p>
+          </button>
+          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="clothes">
+            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">ملابس</span>
+            <h3 class="mb-3 text-2xl font-extrabold">قطع مريحة حسب المقاس</h3>
+            <p class="text-sm leading-7 text-brand-mocha/80">جاكيتات، أطقم أطفال، شالات، قبعات وقطع موسمية قابلة للتخصيص.</p>
+          </button>
+          <button class="category-btn rounded-[2rem] bg-white p-6 text-right shadow-soft" data-category="decor">
+            <span class="mb-5 inline-flex rounded-full bg-brand-sand px-4 py-2 text-sm font-bold text-brand-mocha">ديكور المنزل</span>
+            <h3 class="mb-3 text-2xl font-extrabold">دفء وأناقة في كل زاوية</h3>
+            <p class="text-sm leading-7 text-brand-mocha/80">سلال، مفارش، أغطية وسائد، تعليقات حائط، وسلال تخزين جميلة.</p>
+          </button>
+        </div>
+      </section>
+
+      <section id="products" class="bg-white py-16">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="mb-2 text-sm font-bold text-brand-rose">المتوفر الآن وما يمكن صنعه</p>
+              <h2 id="category-title" class="text-3xl font-extrabold">قسم الأميغورومي</h2>
+              <p id="category-description" class="mt-3 max-w-3xl text-brand-mocha/80">
+                هذا القسم يعرض منتجات جاهزة للتسليم، إلى جانب تصاميم يمكن تنفيذها حسب الألوان والحجم والشخصية المطلوبة.
+              </p>
+            </div>
+            <a href="#custom" class="w-fit rounded-full bg-brand-dark px-6 py-3 text-sm font-bold text-white hover:bg-brand-rose">لم تجد ما تريد؟ اطلب تصميماً خاصاً</a>
+          </div>
+
+          <div class="grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
+            <div>
+              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">المتوفر حالياً</h3>
+              <div id="available-list" class="grid gap-5 md:grid-cols-2"></div>
+            </div>
+            <aside class="rounded-[2rem] bg-brand-sand p-8 shadow-soft">
+              <h3 class="mb-5 text-xl font-extrabold text-brand-mocha">يمكننا أن نصنع لك أيضاً</h3>
+              <ul id="custom-list" class="space-y-4 text-sm leading-7 text-brand-mocha"></ul>
+              <div class="mt-8 rounded-[1.5rem] bg-white p-5">
+                <p class="mb-2 text-sm font-bold text-brand-rose">ماذا نوفر في الطلبات الخاصة؟</p>
+                <ul class="space-y-2 text-sm text-brand-mocha/85">
+                  <li>• اختيار الألوان والخيط المناسب.</li>
+                  <li>• تنفيذ الحجم أو المقاس الذي يريده الزبون.</li>
+                  <li>• إضافة اسم أو تفاصيل خاصة حسب الطلب.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="custom" class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="rounded-[2rem] bg-brand-mocha p-8 text-white shadow-soft">
+            <p class="mb-3 text-sm font-bold text-brand-sand">جهة خاصة للطلب</p>
+            <h2 class="mb-5 text-3xl font-extrabold">أرسل طلبك حتى لو لم تجد ما تريد في الموقع</h2>
+            <p class="mb-8 leading-8 text-white/85">
+              هذا النموذج مخصص للزبون الذي يريد تصميماً غير موجود حالياً في الأقسام. يكتب الاسم واللقب ورقم الهاتف، ثم يرفع صورة
+              القطعة التي يريد تنفيذها حتى يتم التواصل معه وتأكيد التفاصيل.
+            </p>
+            <div class="space-y-4 rounded-[1.5rem] bg-white/10 p-6">
+              <div>
+                <p class="text-sm font-bold">خطوات الطلب:</p>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                  <li>1. إدخال الاسم واللقب ورقم الهاتف.</li>
+                  <li>2. كتابة وصف بسيط للموديل أو المقاس.</li>
+                  <li>3. رفع صورة مرجعية للتصميم المطلوب.</li>
+                  <li>4. الضغط على زر إرسال الطلب.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <form class="rounded-[2rem] bg-white p-8 shadow-soft">
+            <div class="grid gap-6 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-brand-mocha">الاسم</span>
+                <input type="text" placeholder="اكتب الاسم" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-brand-mocha">اللقب</span>
+                <input type="text" placeholder="اكتب اللقب" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+              </label>
+            </div>
+
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-brand-mocha">رقم الهاتف</span>
+                <input type="tel" placeholder="مثال: 0550000000" class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold text-brand-mocha">القسم الأقرب للطلب</span>
+                <select class="w-full rounded-2xl border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose">
+                  <option>أميغورومي</option>
+                  <option>إكسسوارات</option>
+                  <option>ملابس</option>
+                  <option>ديكور المنزل</option>
+                  <option>طلب مختلف</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="mt-6 block">
+              <span class="mb-2 block text-sm font-bold text-brand-mocha">وصف ما تريد صنعه</span>
+              <textarea rows="5" placeholder="اكتب المقاس، الألوان، المناسبة، أو أي تفاصيل إضافية..." class="w-full rounded-[1.5rem] border border-brand-sand bg-brand-cream px-4 py-3 outline-none transition focus:border-brand-rose"></textarea>
+            </label>
+
+            <label class="mt-6 block rounded-[1.5rem] border-2 border-dashed border-brand-rose bg-brand-cream p-6 text-center">
+              <span class="mb-3 block text-sm font-bold text-brand-mocha">صورة ما تريد أن نصنعه لك</span>
+              <input id="reference-image" type="file" accept="image/*" class="mx-auto block w-full max-w-sm text-sm text-brand-mocha file:ml-4 file:rounded-full file:border-0 file:bg-brand-mocha file:px-4 file:py-2 file:font-bold file:text-white hover:file:bg-brand-rose" />
+              <span id="file-name" class="mt-3 block text-sm text-brand-mocha/75">لم يتم اختيار أي صورة بعد.</span>
+            </label>
+
+            <button type="submit" class="mt-8 w-full rounded-full bg-brand-rose px-6 py-4 text-base font-extrabold text-white transition hover:bg-brand-mocha">
+              إرسال الطلب الخاص
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="bg-brand-dark py-10 text-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <h2 class="text-2xl font-extrabold">دفء الغرز</h2>
+          <p class="mt-2 text-sm text-white/75">موقع كروشيه عربي يعرض المتوفر وما يمكن صنعه، مع استقبال الطلبات الخاصة بسهولة.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 text-sm text-white/80">
+          <span class="rounded-full bg-white/10 px-4 py-2">واتساب: 0000 000 00</span>
+          <span class="rounded-full bg-white/10 px-4 py-2">إنستغرام: @your.crochet.store</span>
+          <span class="rounded-full bg-white/10 px-4 py-2">الرد على الطلبات خلال 24 ساعة</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const categories = {
+        amigurumi: {
+          title: 'قسم الأميغورومي',
+          description: 'دمى ومجسمات يدوية مناسبة للهدايا، أعياد الميلاد، وغرف الأطفال، مع إمكانية تنفيذ شخصيات خاصة.',
+          available: [
+            { name: 'أرنب وردي صغير', details: 'متوفر الآن - 3 قطع - ألوان هادئة', price: '1800 دج' },
+            { name: 'دبدوب باسم الطفل', details: 'متوفر الآن - يمكن إضافة الاسم', price: '2200 دج' },
+            { name: 'مجموعة فواكه لطيفة', details: 'متوفر الآن - 5 أشكال مختلفة', price: '1600 دج' },
+            { name: 'عروسة صغيرة', details: 'متوفر الآن - هدية مثالية', price: '2500 دج' }
+          ],
+          custom: ['شخصيات كرتونية حسب الصورة المرجعية.', 'دمى بأحجام أكبر أو أصغر حسب الطلب.', 'تنفيذ ألوان خاصة للمناسبات أو الهدايا.']
+        },
+        accessories: {
+          title: 'قسم الإكسسوارات',
+          description: 'قطع عملية وأنيقة للاستعمال اليومي أو كهدايا خفيفة، مع إمكانية تغيير اللون والمقاس ونوع الإغلاق.',
+          available: [
+            { name: 'حقيبة يد صغيرة', details: 'متوفرة الآن - لون بيج وكحلي', price: '2800 دج' },
+            { name: 'حافظة نقود', details: 'متوفرة الآن - 4 ألوان', price: '1200 دج' },
+            { name: 'ربطات شعر كروشيه', details: 'متوفرة الآن - طقم من 3 قطع', price: '900 دج' },
+            { name: 'غطاء هاتف', details: 'متوفر الآن - مقاسات محددة', price: '1500 دج' }
+          ],
+          custom: ['حقائب بأحجام خاصة أو بأحزمة طويلة.', 'إكسسوارات بألوان الهوية الخاصة بك.', 'هدايا مناسبات مع تغليف بسيط وراقي.']
+        },
+        clothes: {
+          title: 'قسم الملابس',
+          description: 'ملابس كروشيه مريحة ومميزة للأطفال والكبار، مع تنفيذ المقاسات الموسمية حسب الطلب.',
+          available: [
+            { name: 'طاقم رضيع', details: 'متوفر الآن - حتى عمر 6 أشهر', price: '3200 دج' },
+            { name: 'شال خفيف', details: 'متوفر الآن - لونان', price: '2400 دج' },
+            { name: 'قبعة شتوية', details: 'متوفرة الآن - عدة ألوان', price: '1300 دج' },
+            { name: 'صديري نسائي', details: 'متوفر الآن - مقاس متوسط', price: '3900 دج' }
+          ],
+          custom: ['تفصيل حسب المقاس الدقيق للزبون.', 'اختيار ألوان خاصة أو موديل من صورة.', 'تنفيذ أطقم أم وطفل أو هدايا مواليد.']
+        },
+        decor: {
+          title: 'قسم ديكور المنزل',
+          description: 'لمسات منزلية دافئة وعملية من الكروشيه تزيد أناقة المكان، سواء للصالون أو المطبخ أو غرف النوم.',
+          available: [
+            { name: 'مفرش طاولة دائري', details: 'متوفر الآن - مقاسان', price: '2100 دج' },
+            { name: 'سلة تخزين', details: 'متوفرة الآن - حجم متوسط', price: '2600 دج' },
+            { name: 'غطاء وسادة', details: 'متوفر الآن - 2 تصاميم', price: '1900 دج' },
+            { name: 'تعليقة حائط', details: 'متوفرة الآن - لون طبيعي', price: '2300 دج' }
+          ],
+          custom: ['مفارش حسب مقاس الطاولة أو الكومود.', 'سلال تنظيم بأحجام متعددة.', 'تنفيذ ديكور للضيافة والمناسبات الخاصة.']
+        }
+      };
+
+      const titleEl = document.getElementById('category-title');
+      const descEl = document.getElementById('category-description');
+      const availableList = document.getElementById('available-list');
+      const customList = document.getElementById('custom-list');
+      const buttons = document.querySelectorAll('.category-btn');
+
+      function renderCategory(key) {
+        const category = categories[key];
+        titleEl.textContent = category.title;
+        descEl.textContent = category.description;
+        availableList.innerHTML = category.available
+          .map(
+            (item) => `
+              <article class="rounded-[1.75rem] border border-brand-sand bg-brand-cream p-5">
+                <p class="mb-3 text-xs font-bold text-brand-rose">جاهز أو شبه جاهز</p>
+                <h4 class="text-lg font-extrabold text-brand-mocha">${item.name}</h4>
+                <p class="mt-2 text-sm leading-7 text-brand-mocha/80">${item.details}</p>
+                <p class="mt-4 text-sm font-bold text-brand-olive">${item.price}</p>
+              </article>
+            `
+          )
+          .join('');
+
+        customList.innerHTML = category.custom
+          .map((item) => `<li class="rounded-2xl bg-white/70 px-4 py-3">• ${item}</li>`)
+          .join('');
+
+        buttons.forEach((button) => {
+          const isActive = button.dataset.category === key;
+          button.classList.toggle('ring-2', isActive);
+          button.classList.toggle('ring-brand-rose', isActive);
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => renderCategory(button.dataset.category));
+      });
+
+      const fileInput = document.getElementById('reference-image');
+      const fileName = document.getElementById('file-name');
+      fileInput.addEventListener('change', () => {
+        fileName.textContent = fileInput.files.length ? `الصورة المختارة: ${fileInput.files[0].name}` : 'لم يتم اختيار أي صورة بعد.';
+      });
+
+      renderCategory('amigurumi');
+    </script>
+  </body>
+</html>
